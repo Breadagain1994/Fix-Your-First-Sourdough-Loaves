@@ -380,6 +380,55 @@ section:nth-child(even) {
   margin-right: auto;
 }
 
+/* 8. GUARANTEE SECTION */
+.guarantee-container {
+  display: flex;
+  justify-content: center;
+}
+
+.guarantee-box {
+  background-color: var(--bg-card);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 4rem;
+  max-width: 800px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+}
+
+.guarantee-box h2 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: 0.5rem;
+  color: var(--crust-brown);
+}
+
+.guarantee-box h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--crust-brown);
+  opacity: 0.8;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.guarantee-box p {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.guarantee-box p:last-child {
+  margin-bottom: 0;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  margin-top: 2.5rem;
+  color: var(--crust-brown);
+}
+
 /* FOOTER */
 footer {
   text-align: center;
