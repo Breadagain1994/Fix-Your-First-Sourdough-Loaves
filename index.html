@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fix Your First Sourdough Loaves | Breadagain</title>
+    
+    <!-- Google Fonts for Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. HERO SECTION -->
+    <section class="hero container">
+        <h1>Your sourdough didn’t turn out the way you hoped?</h1>
+        <p>Here’s exactly how to fix your next loaf — without guessing.</p>
+        
+        <a href="#offer" class="btn">Fix My Next Loaf</a>
+        <span class="microcopy">Instant download · Just $9</span>
+        
+        <div class="hero-image">
+            <img src="hero_loaf.png" alt="Aspirational warm sourdough loaf and coffee">
+        </div>
+    </section>
+
+    <!-- 2. BEFORE / AFTER SECTION -->
+    <section class="before-after">
+        <div class="container">
+            <h2>Same recipe. Completely different results.</h2>
+            
+            <div class="comparison-wrapper">
+                <img src="Same recipe. Completely different results..png" alt="Before and after sourdough comparison" class="comparison-image">
+                
+                <div class="comparison-labels">
+                    <div class="label-column">
+                        <h4>Left</h4>
+                        <ul class="label-list">
+                            <li>Flat</li>
+                            <li>Dense</li>
+                            <li>No oven spring</li>
+                            <li>Inconsistent</li>
+                        </ul>
+                    </div>
+                    <div class="label-column">
+                        <h4>Right</h4>
+                        <ul class="label-list">
+                            <li>Strong rise</li>
+                            <li>Open crumb</li>
+                            <li>Controlled fermentation</li>
+                            <li>Repeatable results</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="reframe-text">It’s not the recipe. It’s the system.</p>
+        </div>
+    </section>
+
+    <!-- 3. REFRAME SECTION -->
+    <section>
+        <div class="container reframe-section">
+            <p>You followed the steps.</p>
+            <p>But no one taught you how to read your dough.</p>
+            <p><strong>That’s why one loaf turns out flat while another rises beautifully.</strong></p>
+        </div>
+    </section>
+
+    <!-- 4 & 5. PRODUCT INTRO & WHAT'S INSIDE -->
+    <section class="product-intro">
+        <div class="container">
+            <h2>Meet “Fix Your First Sourdough Loaves”</h2>
+            <p>A practical beginner-friendly digital guide that helps you understand what went wrong and improve your next bake.</p>
+            
+            <div class="preview-grid">
+                <div class="preview-item">
+                    <img src="11.png" alt="Starter Lifecycle Page preview">
+                    <p>Know when your starter is actually ready</p>
+                </div>
+                <div class="preview-item">
+                    <img src="12.png" alt="Starter Maintenance Page preview">
+                    <p>Keep your starter alive without overcomplicating it</p>
+                </div>
+                <div class="preview-item">
+                    <img src="18.png" alt="Coil Folds Page preview">
+                    <p>Learn folds that build strength without guesswork</p>
+                </div>
+            </div>
+            
+            <div class="bullets-box">
+                <ul>
+                    <li>know when your starter is actually ready</li>
+                    <li>understand starter maintenance simply</li>
+                    <li>learn what strong dough actually looks like</li>
+                    <li>fix flat and dense bread</li>
+                    <li>stop guessing and start improving consistently</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. OFFER SECTION -->
+    <section class="offer" id="offer">
+        <div class="container">
+            <h2>Skip weeks of frustration for just $9</h2>
+            <a href="#" class="btn">Fix My Next Loaf</a>
+            <span class="microcopy">Instant download · $9</span>
+        </div>
+    </section>
+
+    <!-- 7. TRUST / MAKER SECTION -->
+    <section>
+        <div class="container trust-section">
+            <div class="trust-image">
+                <img src="Formen.png" alt="Real home baker shaping dough authentically">
+            </div>
+            <div class="trust-content">
+                <p>Made by a real home baker who learned loaf by loaf — not by a baking school.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. FINAL CTA SECTION -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Your next loaf can be guesswork — or your first real improvement.</h2>
+            <a href="#offer" class="btn">Fix My Next Loaf</a>
+            <span class="microcopy">Instant download · $9</span>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <!-- Sourdough Parent Logo -->
+            <img src="Proud Parent of a Sourdough Starter.png" alt="Proud Parent of a Sourdough Starter Logo" class="footer-logo">
+            <p>&copy; 2026. Breadagain. Made for home bakers everywhere.</p>
+            <p style="margin-top: 1rem;"><a href="legal.html">Legal Information &amp; Privacy Policy (Imprint)</a></p>
+        </div>
+    </footer>
+
+    <!-- Begin of Digistore24 Trusted Badge Code -->
+    <script type="text/javascript" src="https://www.digistore24.com/trusted-badge/44045/KjfjLyEIMXED85P/salespage"></script>
+    <!-- End of Digistore24 Trusted Badge Code -->
+
+    <!-- Lightbox Modal container -->
+    <div class="lightbox-modal" id="lightbox">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Expanded View">
+    </div>
+
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.getElementById('lightbox-close');
+        
+        lightbox.style.display = 'none';
+
+        const previewImages = document.querySelectorAll('.preview-item img');
+        
+        previewImages.forEach(img => {
+            img.addEventListener('click', () => {
+                lightbox.style.display = 'flex';
+                // Small timeout to allow display:flex to apply before adding opacity
+                setTimeout(() => {
+                    lightbox.classList.add('active');
+                }, 10);
+                lightboxImg.src = img.src;
+            });
+        });
+
+        closeBtn.addEventListener('click', closeLightbox);
+        
+        // Close on background click
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            setTimeout(() => {
+                lightbox.style.display = 'none';
+            }, 300); // match CSS transition duration
+        }
+    </script>
+</body>
+</html>
