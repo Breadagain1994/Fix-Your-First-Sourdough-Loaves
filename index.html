@@ -29,8 +29,8 @@
         <h1>Your sourdough didn’t turn out the way you hoped?</h1>
         <p>Here’s exactly how to fix your next loaf — without guessing.</p>
         
-        <a href="https://www.checkout-ds24.com/product/681362" onclick="handleClick(event)" class="btn">Fix My Next Loaf</a>
-        <span class="microcopy">Instant download · Just $9</span>
+        <a href="#" onclick="triggerCheckout(event, 'https://www.checkout-ds24.com/product/681362')" onclick="handleClick(event)" class="btn">Fix My Next Loaf</a>
+        <span class="microcopy">Instant download · Just $10</span>
         
         <div class="hero-image">
             <img src="hero_loaf.png" alt="Aspirational warm sourdough loaf and coffee">
@@ -116,9 +116,9 @@
     <!-- 6. OFFER SECTION -->
     <section class="offer" id="offer">
         <div class="container">
-            <h2>Skip weeks of frustration for just $9</h2>
-            <a href="https://www.checkout-ds24.com/product/681362" onclick="handleClick(event)" class="btn">Fix My Next Loaf</a>
-            <span class="microcopy">Instant download · $9</span>
+            <h2>Skip weeks of frustration for just $10</h2>
+            <a href="#" onclick="triggerCheckout(event, 'https://www.checkout-ds24.com/product/681362')" onclick="handleClick(event)" class="btn">Fix My Next Loaf</a>
+            <span class="microcopy">Instant download · $10</span>
         </div>
     </section>
 
@@ -185,8 +185,8 @@
     <section class="final-cta">
         <div class="container">
             <h2>Your next loaf can be guesswork — or your first real improvement.</h2>
-            <a href="https://www.checkout-ds24.com/product/681362" onclick="handleClick(event)" class="btn">Fix My Next Loaf</a>
-            <span class="microcopy">Instant download · $9</span>
+            <a href="#" onclick="triggerCheckout(event, 'https://www.checkout-ds24.com/product/681362')" onclick="handleClick(event)" class="btn">Fix My Next Loaf</a>
+            <span class="microcopy">Instant download · $10</span>
         </div>
     </section>
 
@@ -199,10 +199,6 @@
             <p style="margin-top: 1rem;"><a href="legal.html">Legal Information &amp; Privacy Policy (Imprint)</a></p>
         </div>
     </footer>
-
-    <!-- Begin of Digistore24 Trusted Badge Code -->
-    <script type="text/javascript" src="https://www.digistore24.com/trusted-badge/44045/KjfjLyEIMXED85P/salespage"></script>
-    <!-- End of Digistore24 Trusted Badge Code -->
 
     <!-- Lightbox Modal container -->
     <div class="lightbox-modal" id="lightbox">
@@ -267,6 +263,85 @@
             // Redirect smoothly to Digistore
             window.location.href = "https://www.checkout-ds24.com/product/681362";
         };
+    </script>
+
+    
+    <!-- Checkout Interstitial Modal -->
+    <div id="checkout-modal" class="fixed inset-0 z-[10000] hidden items-center justify-center transition-all">
+        <div class="absolute inset-0 bg-gray-900/80 backdrop-blur-md" onclick="cancelCheckout()"></div>
+        <div class="relative bg-white rounded-2xl shadow-2xl w-full max-w-md mx-4 overflow-hidden transform scale-95 opacity-0 transition-all duration-300 border-2 border-brand/20" id="checkout-modal-content">
+            
+            <div class="p-8 pb-6 text-center">
+                <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-5 shadow-inner border border-blue-100">
+                    <i data-lucide="shield-check" class="w-8 h-8"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Secure Checkout</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-6">Transferring you to our official payment processing partner, <strong>Digistore24</strong>, to complete your transaction securely.</p>
+                
+                <!-- Digistore Sandboxed Iframe (Prevents Main DOM Hijacking) -->
+                <div class="flex justify-center items-center bg-gray-50/50 rounded-xl mb-6 relative overflow-hidden w-full h-[80px]">
+                    <iframe src="digistore-badge.html" class="w-[300px] h-[100px] border-none absolute" scrolling="no"></iframe>
+                </div>
+                
+                <div class="flex items-center justify-center gap-3 text-sm font-bold text-brand bg-brand/10 w-full px-5 py-3 rounded-xl mb-4">
+                    <div class="w-4 h-4 border-2 border-brand border-t-transparent rounded-full animate-spin"></div>
+                    Redirecting automatically...
+                </div>
+                
+                <!-- Explicit Cancellation options added based on User Feedback -->
+                <div class="flex flex-col gap-2">
+                    <a id="checkout-fallback" href="https://www.checkout-ds24.com/product/681362" class="block w-full py-2.5 bg-gray-900 text-white rounded-lg text-sm font-semibold hover:bg-gray-800 transition-colors">
+                        Proceed to Secure Checkout Immediately
+                    </a>
+                    <button onclick="cancelCheckout()" class="block w-full py-2 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-lg text-sm font-medium transition-colors">
+                        Cancel Redirect
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let checkoutTimeoutId = null;
+
+        function triggerCheckout(e, checkoutUrl) {
+            if (e) e.preventDefault();
+            const modal = document.getElementById('checkout-modal');
+            const content = document.getElementById('checkout-modal-content');
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+            
+            // Trigger animation
+            setTimeout(() => {
+                content.classList.remove('scale-95', 'opacity-0');
+                content.classList.add('scale-100', 'opacity-100');
+            }, 10);
+            
+            if (window.lucide) window.lucide.createIcons();
+            
+            // Execute redirect after 6.0 seconds to give ample cancellation time
+            checkoutTimeoutId = setTimeout(() => {
+                window.location.href = checkoutUrl;
+            }, 6000); 
+        }
+
+        function cancelCheckout() {
+            if (checkoutTimeoutId) clearTimeout(checkoutTimeoutId);
+            
+            const modal = document.getElementById('checkout-modal');
+            const content = document.getElementById('checkout-modal-content');
+            
+            content.classList.add('scale-95', 'opacity-0');
+            content.classList.remove('scale-100', 'opacity-100');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }, 300);
+        }
     </script>
 </body>
 </html>

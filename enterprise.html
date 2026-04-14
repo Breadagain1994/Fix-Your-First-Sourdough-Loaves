@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breadagain | Enterprise-Grade Sourdough Systems</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            DEFAULT: '#D69A3A',
+                            hover: '#C98A3D',
+                            light: 'rgba(214, 154, 58, 0.08)'
+                        },
+                        ui: {
+                            bg: '#FFFFFF',
+                            alt: '#F8F9FA',
+                            text: '#0A0A0A',
+                            muted: '#6B7280',
+                            border: '#E5E7EB'
+                        }
+                    },
+                    boxShadow: {
+                        'surface': '0 1px 3px rgba(0,0,0,0.04)',
+                        'hover': '0 10px 25px rgba(0,0,0,0.06)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #FFFFFF; color: #0A0A0A; }
+        .radial-gradient {
+            background: radial-gradient(circle at 50% 0%, rgba(214, 154, 58, 0.05) 0%, rgba(255, 255, 255, 0) 50%);
+        }
+        
+        /* Scroll Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 800ms cubic-bezier(0.16, 1, 0.3, 1), transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Staggers */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+
+        /* Links */
+        .hover-underline-animation {
+            position: relative;
+        }
+        .hover-underline-animation::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #D69A3A;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        .hover-underline-animation:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand selection:text-white">
+
+    <!-- 1. Navigation -->
+        <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-[#E5E7EB] z-[9999] transition-all duration-300">
+        <div class="max-w-[1200px] mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="enterprise.html" class="font-bold text-xl tracking-tight text-[#0A0A0A]">Sourdough Home<span class="text-brand">.</span></a>
+            <div class="hidden lg:flex items-center space-x-8 text-sm font-medium text-[#6B7280]">
+                <a href="enterprise.html" class="hover:text-brand transition-colors">The Fermentery</a>
+                <a href="library.html" class="hover:text-brand transition-colors">Library</a>
+                <a href="gear.html" class="hover:text-brand transition-colors">Hardware</a>
+                <a href="mixins.html" class="hover:text-brand transition-colors">Mix-Ins</a>
+                <a href="calculator.html" class="hover:text-brand transition-colors">Calculator</a>
+            </div>
+            <div class="flex items-center">
+                <a href="#" onclick="triggerCheckout(event, 'https://www.checkout-ds24.com/product/681362')" class="bg-brand hover:bg-[#C98A3D] text-white px-5 py-2 rounded-lg text-sm font-medium shadow-sm hover:shadow-md transition-all duration-200">Get The System</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. Hero Section -->
+    <main class="relative pt-48 pb-32 overflow-hidden radial-gradient">
+        <div class="max-w-[1200px] mx-auto px-6 text-center animate-on-scroll is-visible">
+            <span class="inline-block px-3 py-1 bg-brand-light text-brand text-xs font-semibold uppercase tracking-wider rounded-full mb-6 border border-brand/20">The Standard in Sourdough Analytics</span>
+            <h1 class="text-[56px] md:text-[72px] font-bold leading-[1.1] tracking-[-0.03em] max-w-4xl mx-auto mb-6 text-ui-text">
+                Systematic, predictable sourdough mastery.
+            </h1>
+            <p class="text-lg md:text-xl text-ui-muted max-w-[680px] mx-auto mb-10 leading-relaxed font-normal delay-100 animate-on-scroll is-visible">
+                Equip your kitchen with the data-driven framework used by serious bakers to eliminate guesswork, architect perfect crumb structures, and achieve repeatable artisan-quality oven spring.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 delay-200 animate-on-scroll is-visible">
+                <a href="#pricing" class="w-full sm:w-auto flex items-center justify-center bg-brand hover:bg-brand-hover text-white h-12 px-7 rounded-[10px] font-medium shadow-sm hover:shadow-md hover:-translate-y-[1px] transition-all duration-200">
+                    Unlock the System
+                </a>
+                <a href="#methodology" class="w-full sm:w-auto flex items-center justify-center bg-transparent border border-ui-border text-ui-text h-12 px-7 rounded-[10px] font-medium hover:bg-ui-alt transition-colors duration-200">
+                    Explore the Methodology
+                </a>
+            </div>
+            
+            <div class="mt-20 delay-300 animate-on-scroll is-visible scale-100">
+                <div class="rounded-xl border border-ui-border p-2 bg-white shadow-2xl mx-auto max-w-5xl">
+                    <img src="Same recipe. Completely different results..png" alt="Sourdough Consistency Platform Interface" class="rounded-lg w-full object-cover max-h-[500px]">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 5. Key Differentiator -->
+    <section class="py-32 bg-brand-light relative" id="methodology">
+        <div class="max-w-[800px] mx-auto px-6 text-center animate-on-scroll">
+            <i data-lucide="microscope" class="w-12 h-12 text-brand mx-auto mb-6"></i>
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">We don't teach recipes. We engineer frameworks.</h2>
+            <p class="text-lg text-ui-muted leading-relaxed">
+                Most bakers treat every loaf as an isolated science experiment relying on instinct. The Breadagain methodology shifts focus from rigid instructions to tracking the core variables of fermentation, hydration, and thermal activity. Once you observe the data, predictability becomes inevitable.
+            </p>
+        </div>
+    </section>
+
+    <!-- 4. Features Section (Grid) -->
+    <section class="py-32 bg-white" id="features">
+        <div class="max-w-[1200px] mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-20 animate-on-scroll">
+                <h2 class="text-[40px] font-bold tracking-tight mb-4">Complete variable control.</h2>
+                <p class="text-lg text-ui-muted">Everything you need to monitor inputs, track progression, and guarantee artisan-grade outputs.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-2xl border border-ui-border shadow-surface hover:shadow-hover hover:-translate-y-1 transition-all duration-250 animate-on-scroll">
+                    <div class="w-14 h-14 rounded-xl bg-brand-light flex items-center justify-center mb-6">
+                        <i data-lucide="git-commit" class="text-brand w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">Starter Vitality Logging</h3>
+                    <p class="text-ui-muted leading-relaxed">Track feeding ratios, ambient temperatures, and peak times. Anticipate exact inoculation windows with engineered precision.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-2xl border border-ui-border shadow-surface hover:shadow-hover hover:-translate-y-1 transition-all duration-250 animate-on-scroll delay-100">
+                    <div class="w-14 h-14 rounded-xl bg-brand-light flex items-center justify-center mb-6">
+                        <i data-lucide="bar-chart-3" class="text-brand w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">Fermentation Analytics</h3>
+                    <p class="text-ui-muted leading-relaxed">Map visual expansion against time constraints. Replace "is it ready yet?" with data-backed confirmation triggers.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-2xl border border-ui-border shadow-surface hover:shadow-hover hover:-translate-y-1 transition-all duration-250 animate-on-scroll delay-200">
+                    <div class="w-14 h-14 rounded-xl bg-brand-light flex items-center justify-center mb-6">
+                        <i data-lucide="target" class="text-brand w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">Process Evaluation</h3>
+                    <p class="text-ui-muted leading-relaxed">Post-bake scorecards dissect crumb architecture and oven spring. Iterative adjustments guarantee continuous quality improvement.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="bg-white p-8 rounded-2xl border border-ui-border shadow-surface hover:shadow-hover hover:-translate-y-1 transition-all duration-250 animate-on-scroll">
+                    <div class="w-14 h-14 rounded-xl bg-brand-light flex items-center justify-center mb-6">
+                        <i data-lucide="droplet" class="text-brand w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">Hydration Modeling</h3>
+                    <p class="text-ui-muted leading-relaxed">Advanced baker's math cheat sheets allow you to safely increment hydration ratios based on flour protein content.</p>
+                </div>
+                <!-- Feature 5 -->
+                <div class="bg-white p-8 rounded-2xl border border-ui-border shadow-surface hover:shadow-hover hover:-translate-y-1 transition-all duration-250 animate-on-scroll delay-100">
+                    <div class="w-14 h-14 rounded-xl bg-brand-light flex items-center justify-center mb-6">
+                        <i data-lucide="calendar" class="text-brand w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">Production Timelines</h3>
+                    <p class="text-ui-muted leading-relaxed">Reverse-engineer your bake schedules. Input your desired bake time and let the system generate your mixing protocol.</p>
+                </div>
+                <!-- Feature 6 -->
+                <div class="bg-white p-8 rounded-2xl border border-ui-border shadow-surface hover:shadow-hover hover:-translate-y-1 transition-all duration-250 animate-on-scroll delay-200">
+                    <div class="w-14 h-14 rounded-xl bg-brand-light flex items-center justify-center mb-6">
+                        <i data-lucide="shield-check" class="text-brand w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">Enterprise Reliability</h3>
+                    <p class="text-ui-muted leading-relaxed">By enforcing strict process monitoring, achieve the same consistency that scales micro-bakeries globally.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. How It Works -->
+    <section class="py-32 bg-ui-alt border-y border-ui-border">
+        <div class="max-w-[1200px] mx-auto px-6">
+            <h2 class="text-center text-[40px] font-bold tracking-tight mb-20 animate-on-scroll">Operationalizing perfection.</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                <!-- Connector Line -->
+                <div class="hidden md:block absolute top-[28px] left-10 right-10 h-[1px] bg-ui-border z-0"></div>
+                
+                <div class="relative z-10 animate-on-scroll">
+                    <div class="w-14 h-14 rounded-full bg-white border border-ui-border flex items-center justify-center text-lg font-bold text-brand shadow-surface mb-6 mx-auto md:mx-0">1</div>
+                    <h3 class="text-xl font-semibold mb-2 text-center md:text-left">Initialize Culture</h3>
+                    <p class="text-ui-muted text-sm text-center md:text-left">Log ambient metrics and deploy precise feeding ratios to guarantee active levain.</p>
+                </div>
+                <div class="relative z-10 animate-on-scroll delay-100">
+                    <div class="w-14 h-14 rounded-full bg-white border border-ui-border flex items-center justify-center text-lg font-bold text-brand shadow-surface mb-6 mx-auto md:mx-0">2</div>
+                    <h3 class="text-xl font-semibold mb-2 text-center md:text-left">Monitor Network</h3>
+                    <p class="text-ui-muted text-sm text-center md:text-left">Execute strength-building folds and track volumetric expansion against temporal controls.</p>
+                </div>
+                <div class="relative z-10 animate-on-scroll delay-200">
+                    <div class="w-14 h-14 rounded-full bg-white border border-ui-border flex items-center justify-center text-lg font-bold text-brand shadow-surface mb-6 mx-auto md:mx-0">3</div>
+                    <h3 class="text-xl font-semibold mb-2 text-center md:text-left">Execute Thermal</h3>
+                    <p class="text-ui-muted text-sm text-center md:text-left">Score and bake utilizing structured steam protocols to maximize architectural oven spring.</p>
+                </div>
+                <div class="relative z-10 animate-on-scroll delay-300">
+                    <div class="w-14 h-14 rounded-full bg-white border border-ui-border flex items-center justify-center text-lg font-bold text-brand shadow-surface mb-6 mx-auto md:mx-0">4</div>
+                    <h3 class="text-xl font-semibold mb-2 text-center md:text-left">Iterate & Scale</h3>
+                    <p class="text-ui-muted text-sm text-center md:text-left">Review structural outcomes via the scorecard. Deploy micro-adjustments for the next iteration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Metrics -->
+    <section class="py-24 bg-white" id="metrics">
+        <div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+            <div class="animate-on-scroll">
+                <div class="text-[56px] font-bold text-ui-text tracking-tight mb-2 counter" data-target="98">0</div>
+                <div class="text-brand font-medium">Percent Rise Consistency</div>
+            </div>
+            <div class="animate-on-scroll delay-100">
+                <div class="text-[56px] font-bold text-ui-text tracking-tight mb-2 counter" data-target="150">0</div>
+                <div class="text-brand font-medium">Bakes Structurally Modeled</div>
+            </div>
+            <div class="animate-on-scroll delay-200">
+                <div class="text-[56px] font-bold text-ui-text tracking-tight mb-2">Zero</div>
+                <div class="text-brand font-medium">System Guesswork</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Testimonials -->
+    <section class="py-32 bg-ui-alt border-y border-ui-border" id="customers">
+        <div class="max-w-[1200px] mx-auto px-6">
+            <h2 class="text-center text-[40px] font-bold tracking-tight mb-16 animate-on-scroll">Validated by actual users.</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl border border-ui-border shadow-surface animate-on-scroll flex flex-col">
+                    <div class="flex text-brand mb-6">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-[15px] text-ui-text mb-8 leading-relaxed flex-grow">"I killed my first sourdough starter. And my second... I'm starting my third this week and I think I've got the answer. Not only did this give me a wealth of information about keeping the starter alive, but it provides printable sheets in a check-the-box format that makes it easy even for a scatter-brained, busy professional!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 font-bold text-sm">CG</div>
+                        <div>
+                            <div class="font-bold text-sm text-ui-text">C.G.</div>
+                            <div class="text-xs text-ui-muted">Verified Customer</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl border border-ui-border shadow-surface animate-on-scroll delay-100 flex flex-col">
+                    <div class="flex text-brand mb-6">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-[15px] text-ui-text mb-8 leading-relaxed flex-grow">"This is a structured operating system for home bakers who want to understand their dough and produce consistent results... It teaches you how to track hydration, fermentation, and outcomes in a way that reveals patterns instead of leaving you guessing. Sourdough becomes predictable when you stop guessing and start observing."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 font-bold text-sm">CA</div>
+                        <div>
+                            <div class="font-bold text-sm text-ui-text">Cajetan</div>
+                            <div class="text-xs text-ui-muted">Verified Customer</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl border border-ui-border shadow-surface animate-on-scroll delay-200 flex flex-col">
+                    <div class="flex text-brand mb-6">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-[15px] text-ui-text mb-8 leading-relaxed flex-grow">"If you feel like every batch of bread turns out differently and you're not quite sure why, this might be exactly what you need. I am new to the bread making world and grabbed this to learn a little more about the craft and it certainly did not disappoint... I enjoyed the mix of pictures and concrete advice and examples."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 font-bold text-sm">KV</div>
+                        <div>
+                            <div class="font-bold text-sm text-ui-text">Kerisma V.</div>
+                            <div class="text-xs text-ui-muted">Verified Customer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Pricing -->
+    <section class="py-32 bg-white" id="pricing">
+        <div class="max-w-[1000px] mx-auto px-6">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-[40px] font-bold tracking-tight mb-4">Pricing architecture.</h2>
+                <p class="text-lg text-ui-muted">Invest in the infrastructure to scale your baking consistency.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Tier 1 -->
+                <div class="p-10 rounded-2xl border border-ui-border hover:shadow-hover transition-shadow animate-on-scroll">
+                    <h3 class="text-2xl font-bold mb-2">Fundamental Guide</h3>
+                    <div class="text-ui-muted mb-6">Diagnostic protocols for first-time success.</div>
+                    <div class="text-5xl font-bold mb-8">$10</div>
+                    <ul class="space-y-4 mb-10 text-ui-text font-medium">
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="text-brand w-5 h-5 mt-0.5"></i>Starter activation protocol</li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="text-brand w-5 h-5 mt-0.5"></i>Rapid mistake diagnosis</li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="text-brand w-5 h-5 mt-0.5"></i>Instant structural insights</li>
+                    </ul>
+                    <a href="#" onclick="triggerCheckout(event, 'https://www.checkout-ds24.com/product/681362')" class="w-full flex items-center justify-center bg-transparent border border-ui-border text-ui-text h-12 px-7 rounded-[10px] font-medium hover:bg-ui-alt transition-colors duration-200">Initialize Standard</a>
+                </div>
+                
+                <!-- Tier 2 (Highlighted) -->
+                <div class="p-10 rounded-2xl border-2 border-brand bg-white shadow-lg relative transform md:-translate-y-4 animate-on-scroll delay-100">
+                    <div class="absolute top-0 right-8 transform -translate-y-1/2 bg-brand text-white text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full">Enterprise Grade</div>
+                    <h3 class="text-2xl font-bold mb-2">Consistency System</h3>
+                    <div class="text-ui-muted mb-6">The complete 120-page analytical tracking suite.</div>
+                    <div class="text-5xl font-bold mb-8">$29</div>
+                    <ul class="space-y-4 mb-10 text-ui-text font-medium">
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="text-brand w-5 h-5 mt-0.5"></i>Everything in Fundamental</li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="text-brand w-5 h-5 mt-0.5"></i>120 printable tracking templates</li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="text-brand w-5 h-5 mt-0.5"></i>Bake-day architectural scorecards</li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="text-brand w-5 h-5 mt-0.5"></i>Advanced hydration math frameworks</li>
+                    </ul>
+                    <a href="#" onclick="triggerCheckout(event, 'https://www.checkout-ds24.com/product/681362')" class="w-full flex items-center justify-center bg-brand hover:bg-brand-hover text-white h-12 px-7 rounded-[10px] font-medium shadow-sm hover:shadow-md transition-all duration-200">Deploy Full System</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. FAQs -->
+    <section class="py-32 bg-ui-alt border-y border-ui-border">
+        <div class="max-w-[720px] mx-auto px-6">
+            <h2 class="text-[40px] font-bold tracking-tight text-center mb-12 animate-on-scroll">Frequently requested data.</h2>
+            
+            <div class="space-y-4 animate-on-scroll delay-100">
+                <details class="group bg-white p-6 rounded-xl border border-ui-border cursor-pointer">
+                    <summary class="font-semibold text-lg flex justify-between items-center list-none outline-none">
+                        Is this compatible with legacy recipes?
+                        <i data-lucide="plus" class="text-ui-muted group-open:hidden transition-transform"></i>
+                        <i data-lucide="minus" class="text-ui-muted hidden group-open:block transition-transform"></i>
+                    </summary>
+                    <p class="text-ui-muted mt-4 leading-relaxed">Yes. Our framework operates as an overlay layer. You can plug any existing hydration ratio or historical recipe into our trackers to evaluate and optimize its output.</p>
+                </details>
+                <details class="group bg-white p-6 rounded-xl border border-ui-border cursor-pointer">
+                    <summary class="font-semibold text-lg flex justify-between items-center list-none outline-none">
+                        What forms do the templates take?
+                        <i data-lucide="plus" class="text-ui-muted group-open:hidden transition-transform"></i>
+                        <i data-lucide="minus" class="text-ui-muted hidden group-open:block transition-transform"></i>
+                    </summary>
+                    <p class="text-ui-muted mt-4 leading-relaxed">System assets are deployed instantly via high-resolution PDF modules, engineered for exact 1:1 local printing or digital tablet annotation.</p>
+                </details>
+                <details class="group bg-white p-6 rounded-xl border border-ui-border cursor-pointer">
+                    <summary class="font-semibold text-lg flex justify-between items-center list-none outline-none">
+                        Do I need precise hardware scales?
+                        <i data-lucide="plus" class="text-ui-muted group-open:hidden transition-transform"></i>
+                        <i data-lucide="minus" class="text-ui-muted hidden group-open:block transition-transform"></i>
+                    </summary>
+                    <p class="text-ui-muted mt-4 leading-relaxed">While volumetric tracking works for beginners, adopting metric gram scales is required to utilize our hydration modeling grids effectively.</p>
+                </details>
+                <details class="group bg-white p-6 rounded-xl border border-ui-border cursor-pointer">
+                    <summary class="font-semibold text-lg flex justify-between items-center list-none outline-none">
+                        What is the SLA on the guarantee?
+                        <i data-lucide="plus" class="text-ui-muted group-open:hidden transition-transform"></i>
+                        <i data-lucide="minus" class="text-ui-muted hidden group-open:block transition-transform"></i>
+                    </summary>
+                    <p class="text-ui-muted mt-4 leading-relaxed">We offer a 60-day strict performance guarantee. If our tracking framework does not result in measurable architectural improvements to your crumb structure, we issue a zero-friction refund.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Final CTA -->
+    <section class="py-40 bg-white text-center">
+        <div class="max-w-[700px] mx-auto px-6 animate-on-scroll">
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">Ready to architect your crust?</h2>
+            <p class="text-xl text-ui-muted mb-10">Stop guessing. Deploy the Breadagain framework today.</p>
+            <a href="#" onclick="triggerCheckout(event, 'https://www.checkout-ds24.com/product/681362')" class="inline-flex items-center justify-center bg-brand hover:bg-brand-hover text-white h-14 px-10 rounded-[12px] text-lg font-medium shadow-sm hover:shadow-md hover:-translate-y-[1px] transition-all duration-200">
+                Initialize System Now
+            </a>
+        </div>
+    </section>
+
+    <!-- 12. Footer -->
+    <footer class="bg-[#111111] text-white pt-20 pb-10">
+        <div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div class="md:col-span-1">
+                <div class="font-bold text-xl tracking-tight mb-4">Breadagain<span class="text-brand">.</span></div>
+                <p class="text-[#888888] text-sm leading-relaxed mb-6">Enterprise-grade systems and analytics mapping for modern sourdough cultivators.</p>
+                <!-- Icons placeholder -->
+                <div class="flex space-x-4 text-[#888888]">
+                    <i data-lucide="twitter" class="w-5 h-5 hover:text-white cursor-pointer transition-colors"></i>
+                    <i data-lucide="github" class="w-5 h-5 hover:text-white cursor-pointer transition-colors"></i>
+                    <i data-lucide="instagram" class="w-5 h-5 hover:text-white cursor-pointer transition-colors"></i>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="font-bold mb-4">Product</h4>
+                <ul class="space-y-3 text-[#888888] text-sm">
+                    <li><a href="#" onclick="triggerCheckout(event, 'https://www.checkout-ds24.com/product/681362')" class="hover:text-white transition-colors">Diagnostic Guide</a></li>
+                    <li><a href="#" onclick="triggerCheckout(event, 'https://www.checkout-ds24.com/product/681362')" class="hover:text-white transition-colors">Consistency Toolkit</a></li>
+                    <li><a href="calculator.html" class="hover:text-white transition-colors">Hydration Calculator</a></li>
+                    <li><a href="mixins.html" class="hover:text-white transition-colors">Mix-in Protocol</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-bold mb-4">Company</h4>
+                <ul class="space-y-3 text-[#888888] text-sm">
+                    <li><a href="#" onclick="openAboutModal(event)" class="hover:text-white transition-colors cursor-pointer">About Breadagain</a></li>
+                    <li><a href="library.html" class="hover:text-white transition-colors">The Sourdough Library</a></li>
+                    <li><a href="gear.html" class="hover:text-white transition-colors">Hardware Arsenal</a></li>
+                    <li><a href="https://instagram.com/breadagain__" target="_blank" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-bold mb-4">Legal</h4>
+                <ul class="space-y-3 text-[#888888] text-sm">
+                    <li><a href="enterprise-legal.html" class="hover:text-white transition-colors">Legal Information &amp; Privacy Policy (Imprint)</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="max-w-[1200px] mx-auto px-6 border-t border-[#333333] pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-[#888888]">
+            <p>&copy; 2026 Tjardbooks / Breadagain. All rights reserved.</p>
+            <p class="mt-4 md:mt-0">Processed securely via Digistore24 Ecosystem.</p>
+        </div>
+    </footer>
+
+    <!-- Init Icons & Observer -->
+    <script>
+        lucide.createIcons();
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Trigger only once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Simple counter animation
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = parseInt(entry.target.getAttribute('data-target'));
+                    animateValue(entry.target, 0, target, 2000);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+
+        function animateValue(obj, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                // easeOutQuad
+                const easeProgress = 1 - (1 - progress) * (1 - progress);
+                obj.innerHTML = Math.floor(easeProgress * (end - start) + start) + (end === 98 ? '%' : '');
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+    </script>
+
+    <!-- About Modal -->
+    <div id="about-modal" class="fixed inset-0 z-[100] hidden items-center justify-center">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-gray-900/40 backdrop-blur-sm transition-opacity" onclick="closeAboutModal()"></div>
+        <!-- Modal Content -->
+        <div class="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg mx-4 overflow-hidden transform transition-all">
+            <button onclick="closeAboutModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-900 bg-gray-100 hover:bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center transition-colors z-10">
+                <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+            <div class="p-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">👋 Hi, I’m Tjard — and this is Breadagain.</h3>
+                <div class="h-1 w-12 bg-brand rounded mb-6"></div>
+                <div class="space-y-4 text-[15px] text-gray-600 leading-relaxed max-h-[60vh] overflow-y-auto pr-4 scrollbar-thin">
+                    <p>Three years ago, a colleague handed me a living, bubbling jar of wild yeast. It was a sourdough starter born in 2016, named Black Death (yes, really). I had no idea what I was doing — but I was instantly hooked.</p>
+                    <p>My first bake was Joe Semola's "Easy Peasy Sourdough Bread." It wasn't perfect, but it was mine. That feeling of creating something real — with my hands, from simple ingredients — changed everything for me. I call it <strong>BIY: Bake It Yourself.</strong> Sourdough became my way to slow down, create, experiment, and have fun — even when the loaves turned out weird.</p>
+                    
+                    <h4 class="font-bold text-gray-900 text-base mt-6">🍞 My Style</h4>
+                    <p>I love working with a mix of wheat, rye, and spelt, typically around 75% hydration — and yes, I still remember my first game-changer: chocolate sourdough. That was the moment it really clicked. I'm not a trained baker — just a home baker figuring things out as I go.</p>
+
+                    <h4 class="font-bold text-gray-900 text-base mt-6">📒 Why I Made This Planner</h4>
+                    <p>When I started, I really wished something like this existed. A place to track my starter, understand hydration, avoid overproofed disasters, and repeat successful bakes.</p>
+                    <p>So I created it — for beginners, for home bakers, and for anyone trying to figure it out loaf by loaf. This planner comes from experience — not perfection. Use it however you like, adapt it to your rhythm, and most importantly: enjoy the process.</p>
+                </div>
+            </div>
+            <div class="bg-gray-50 p-6 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="text-sm font-medium text-gray-900">
+                    Find Me on Instagram
+                    <span class="block text-xs text-gray-500 font-normal">Learnings, failures, templates, & funny videos</span>
+                </div>
+                <a href="https://instagram.com/breadagain__" target="_blank" class="flex items-center gap-2 bg-gradient-to-tr from-[#FFDC80] via-[#F56040] to-[#C13584] hover:opacity-90 text-white px-5 py-2.5 rounded-lg text-sm font-bold transition-opacity w-full sm:w-auto justify-center shadow-md">
+                    <i data-lucide="instagram" class="w-4 h-4 text-white fill-current"></i> @breadagain__
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function openAboutModal(e) {
+            if (e) e.preventDefault();
+            const modal = document.getElementById('about-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+            if (window.lucide) window.lucide.createIcons();
+        }
+        function closeAboutModal() {
+            const modal = document.getElementById('about-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+    </script>
+
+    
+
+    
+    <!-- Checkout Interstitial Modal -->
+    <div id="checkout-modal" class="fixed inset-0 z-[10000] hidden items-center justify-center transition-all">
+        <div class="absolute inset-0 bg-gray-900/80 backdrop-blur-md" onclick="cancelCheckout()"></div>
+        <div class="relative bg-white rounded-2xl shadow-2xl w-full max-w-md mx-4 overflow-hidden transform scale-95 opacity-0 transition-all duration-300 border-2 border-brand/20" id="checkout-modal-content">
+            
+            <div class="p-8 pb-6 text-center">
+                <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-5 shadow-inner border border-blue-100">
+                    <i data-lucide="shield-check" class="w-8 h-8"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Secure Checkout</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-6">Transferring you to our official payment processing partner, <strong>Digistore24</strong>, to complete your transaction securely.</p>
+                
+                <!-- Digistore Sandboxed Iframe (Prevents Main DOM Hijacking) -->
+                <div class="flex justify-center items-center bg-gray-50/50 rounded-xl mb-6 relative overflow-hidden w-full h-[80px]">
+                    <iframe src="digistore-badge.html" class="w-[300px] h-[100px] border-none absolute" scrolling="no"></iframe>
+                </div>
+                
+                <div class="flex items-center justify-center gap-3 text-sm font-bold text-brand bg-brand/10 w-full px-5 py-3 rounded-xl mb-4">
+                    <div class="w-4 h-4 border-2 border-brand border-t-transparent rounded-full animate-spin"></div>
+                    Redirecting automatically...
+                </div>
+                
+                <!-- Explicit Cancellation options added based on User Feedback -->
+                <div class="flex flex-col gap-2">
+                    <a id="checkout-fallback" href="https://www.checkout-ds24.com/product/681362" class="block w-full py-2.5 bg-gray-900 text-white rounded-lg text-sm font-semibold hover:bg-gray-800 transition-colors">
+                        Proceed to Secure Checkout Immediately
+                    </a>
+                    <button onclick="cancelCheckout()" class="block w-full py-2 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-lg text-sm font-medium transition-colors">
+                        Cancel Redirect
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let checkoutTimeoutId = null;
+
+        function triggerCheckout(e, checkoutUrl) {
+            if (e) e.preventDefault();
+            const modal = document.getElementById('checkout-modal');
+            const content = document.getElementById('checkout-modal-content');
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+            
+            // Trigger animation
+            setTimeout(() => {
+                content.classList.remove('scale-95', 'opacity-0');
+                content.classList.add('scale-100', 'opacity-100');
+            }, 10);
+            
+            if (window.lucide) window.lucide.createIcons();
+            
+            // Execute redirect after 6.0 seconds to give ample cancellation time
+            checkoutTimeoutId = setTimeout(() => {
+                window.location.href = checkoutUrl;
+            }, 6000); 
+        }
+
+        function cancelCheckout() {
+            if (checkoutTimeoutId) clearTimeout(checkoutTimeoutId);
+            
+            const modal = document.getElementById('checkout-modal');
+            const content = document.getElementById('checkout-modal-content');
+            
+            content.classList.add('scale-95', 'opacity-0');
+            content.classList.remove('scale-100', 'opacity-100');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+    </script>
+</body>
+</html>
