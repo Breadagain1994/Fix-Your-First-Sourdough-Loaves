@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hardware Arsenal | Breadagain</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { brand: { DEFAULT: '#D69A3A', hover: '#C98A3D' } },
+                }
+            }
+        }
+    </script>
+    <style>body { font-family: 'Inter', sans-serif; background-color: #FAFBFC; }</style>
+</head>
+<body class="antialiased text-gray-900">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-[#E5E7EB] z-[9999] transition-all duration-300">
+        <div class="max-w-[1200px] mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="enterprise.html" class="font-bold text-xl tracking-tight text-[#0A0A0A]">Sourdough Home<span class="text-brand">.</span></a>
+            <div class="hidden lg:flex items-center space-x-8 text-sm font-medium text-[#6B7280]">
+                <a href="enterprise.html" class="hover:text-brand transition-colors">The Fermentery</a>
+                <a href="library.html" class="hover:text-brand transition-colors">Library</a>
+                <a href="gear.html" class="hover:text-brand transition-colors">Hardware</a>
+                <a href="mixins.html" class="hover:text-brand transition-colors">Mix-Ins</a>
+                <a href="calculator.html" class="hover:text-brand transition-colors">Calculator</a>
+            </div>
+            <div class="flex items-center">
+                <a href="#" onclick="triggerCheckout(event, 'https://www.checkout-ds24.com/product/681362')" class="bg-brand hover:bg-[#C98A3D] text-white px-5 py-2 rounded-lg text-sm font-medium shadow-sm hover:shadow-md transition-all duration-200">Get The System</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="pt-32 pb-16 bg-gray-900 text-white border-b border-gray-800">
+        <div class="max-w-[1000px] mx-auto px-6 text-center">
+            <span class="inline-block px-3 py-1 bg-brand/20 text-brand text-xs font-bold uppercase tracking-wider rounded-full mb-6">Verified Equipment</span>
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6">The Hardware Arsenal</h1>
+            <p class="text-lg text-gray-400 leading-relaxed max-w-[700px] mx-auto">Operating a biological framework requires precision instrumentation. These are the verified, stress-tested tools required to execute the Breadagain protocols flawlessly.</p>
+            
+            <!-- Amazon Wishlist Integrated Button -->
+            <div class="mt-10">
+                <a href="https://www.amazon.de/hz/wishlist/ls/AKD2OXJ3FK17/" target="_blank" class="inline-flex items-center justify-center gap-3 bg-[#FF9900] hover:bg-[#E38800] text-gray-900 h-14 px-8 rounded-xl font-bold text-lg shadow-lg hover:-translate-y-1 transition-all duration-200 cursor-pointer">
+                    <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+                    Add Entire Arsenal directly to Amazon Cart
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-[1200px] mx-auto px-6 py-20">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            
+            <!-- Item 1: Dutch Oven -->
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col">
+                <div class="h-56 bg-white p-6 flex items-center justify-center relative overflow-hidden border-b border-gray-100">
+                    <img src="https://m.media-amazon.com/images/I/511B3a4ARzL._AC_SX600_.jpg" alt="Overmont Dutch Oven" class="object-contain w-full h-full transform group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <div class="text-[10px] font-bold text-brand uppercase tracking-widest mb-2">Thermodynamic Vault</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Overmont Cast Iron Pot</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6 flex-1">Home ovens vent steam aggressively. To achieve explosive oven-spring, the dough must be encapsulated in a heavy cast-iron chamber to trap its own evaporating moisture.</p>
+                    <a href="https://www.amazon.de/hz/wishlist/ls/AKD2OXJ3FK17/" target="_blank" class="w-full flex items-center justify-center gap-2 border-2 border-gray-200 hover:border-[#FF9900] hover:text-[#FF9900] text-gray-600 font-semibold py-3 rounded-lg transition-all">
+                        Procure on Amazon <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Item 2: Proofing Basket -->
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col">
+                <div class="h-56 bg-white p-6 flex items-center justify-center relative overflow-hidden border-b border-gray-100">
+                    <img src="https://m.media-amazon.com/images/I/312YLODg5IL._AC_SX600_.jpg" alt="KESPER Proofing Basket" class="object-contain w-full h-full transform group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <div class="text-[10px] font-bold text-brand uppercase tracking-widest mb-2">Structural Scaffold</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Kesper Rattan Banneton</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6 flex-1">Required for the cold retardation phase. Woven rattan breathes, intentionally wicking moisture from the dough to create the structural "skin" required for surgical scoring.</p>
+                    <a href="https://www.amazon.de/hz/wishlist/ls/AKD2OXJ3FK17/" target="_blank" class="w-full flex items-center justify-center gap-2 border-2 border-gray-200 hover:border-[#FF9900] hover:text-[#FF9900] text-gray-600 font-semibold py-3 rounded-lg transition-all">
+                        Procure on Amazon <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Item 3: Silicone Sling -->
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col">
+                <div class="h-56 bg-white p-6 flex items-center justify-center relative overflow-hidden border-b border-gray-100">
+                    <img src="https://m.media-amazon.com/images/I/51n7Yn2wSdL._AC_SX600_.jpg" alt="Krustenzauber Bread Sling" class="object-contain w-full h-full transform group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <div class="text-[10px] font-bold text-brand uppercase tracking-widest mb-2">Deployment Scaffold</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Silicone Bread Sling</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6 flex-1">Dropping fragile, fermented dough into a 260°C Dutch Oven usually ends in disaster. This reusable silicone thermal sling guarantees smooth, intact transfers every time.</p>
+                    <a href="https://www.amazon.de/hz/wishlist/ls/AKD2OXJ3FK17/" target="_blank" class="w-full flex items-center justify-center gap-2 border-2 border-gray-200 hover:border-[#FF9900] hover:text-[#FF9900] text-gray-600 font-semibold py-3 rounded-lg transition-all">
+                        Procure on Amazon <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Item 4: Magnetic Lame -->
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col">
+                <div class="h-56 bg-white p-6 flex items-center justify-center relative overflow-hidden border-b border-gray-100">
+                    <img src="https://m.media-amazon.com/images/I/31l5MPa9+lL._AC_SX600_.jpg" alt="Gosknor Bread Lame" class="object-contain w-full h-full transform group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <div class="text-[10px] font-bold text-brand uppercase tracking-widest mb-2">Precision Incision</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Magnetic Surgical Lame</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6 flex-1">A dull knife tears the gluten skin, destroying expansion capability. This magnetic lame anchors a razor blade to execute the precise incisions required for a perfect "ear".</p>
+                    <a href="https://www.amazon.de/hz/wishlist/ls/AKD2OXJ3FK17/" target="_blank" class="w-full flex items-center justify-center gap-2 border-2 border-gray-200 hover:border-[#FF9900] hover:text-[#FF9900] text-gray-600 font-semibold py-3 rounded-lg transition-all">
+                        Procure on Amazon <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Item 5: Bench Scraper -->
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col">
+                <div class="h-56 bg-white p-6 flex items-center justify-center relative overflow-hidden border-b border-gray-100">
+                    <img src="https://m.media-amazon.com/images/I/31KJscgwrlL._AC_SX600_.jpg" alt="Vicloon Bench Scraper" class="object-contain w-full h-full transform group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <div class="text-[10px] font-bold text-brand uppercase tracking-widest mb-2">Hydration Manipulation</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Steel Bench Scraper</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6 flex-1">High-hydration dough permanently sticks to bare hands. A rigid steel bench scraper is the only tool that allows you to cleanly establish tension and shape without structural tearing.</p>
+                    <a href="https://www.amazon.de/hz/wishlist/ls/AKD2OXJ3FK17/" target="_blank" class="w-full flex items-center justify-center gap-2 border-2 border-gray-200 hover:border-[#FF9900] hover:text-[#FF9900] text-gray-600 font-semibold py-3 rounded-lg transition-all">
+                        Procure on Amazon <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Item 6: Bread Knife -->
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col">
+                <div class="h-56 bg-white p-6 flex items-center justify-center relative overflow-hidden border-b border-gray-100">
+                    <img src="https://m.media-amazon.com/images/I/51IAWEumDVL._AC_SX600_.jpg" alt="Krustenzauber Bread Knife" class="object-contain w-full h-full transform group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <div class="text-[10px] font-bold text-brand uppercase tracking-widest mb-2">Harvest Architecture</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Serrated Crumb Knife</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6 flex-1">Smashing a perfectly constructed open-crumb sourdough with a blunt chef's knife is a crime. An aggressive, 20cm serrated saw is required to penetrate the hardened crust cleanly.</p>
+                    <a href="https://www.amazon.de/hz/wishlist/ls/AKD2OXJ3FK17/" target="_blank" class="w-full flex items-center justify-center gap-2 border-2 border-gray-200 hover:border-[#FF9900] hover:text-[#FF9900] text-gray-600 font-semibold py-3 rounded-lg transition-all">
+                        Procure on Amazon <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Item 7: Oven Gloves -->
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col">
+                <div class="h-56 bg-white p-6 flex items-center justify-center relative overflow-hidden border-b border-gray-100">
+                    <img src="https://m.media-amazon.com/images/I/51-2FfzEEEL._AC_SX600_.jpg" alt="High Temp Oven Gloves" class="object-contain w-full h-full transform group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <div class="text-[10px] font-bold text-brand uppercase tracking-widest mb-2">Thermal Defense</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">High-Temp Gauntlets</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6 flex-1">A secondary-market requirement. Extracting a 7-kilo cast-iron vault heated to 260°C requires extreme thermal protection. Standard kitchen mitts will rapidly fail under these conditions.</p>
+                    <a href="https://www.amazon.de/hz/wishlist/ls/AKD2OXJ3FK17/" target="_blank" class="w-full flex items-center justify-center gap-2 border-2 border-gray-200 hover:border-[#FF9900] hover:text-[#FF9900] text-gray-600 font-semibold py-3 rounded-lg transition-all">
+                        Procure on Amazon <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#111111] text-white pt-10 pb-10 border-t border-gray-800 mt-10">
+        <div class="max-w-[1200px] mx-auto px-6 text-center text-sm text-[#888888]">
+            <p>&copy; 2026 Tjardbooks / Sourdough Home Ecosystem. All rights reserved.</p>
+            <p class="mt-2 text-xs">As an Amazon Associate we earn from qualifying purchases.</p>
+        </div>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+
+    <!-- About Modal -->
+    <div id="about-modal" class="fixed inset-0 z-[100] hidden items-center justify-center">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-gray-900/40 backdrop-blur-sm transition-opacity" onclick="closeAboutModal()"></div>
+        <!-- Modal Content -->
+        <div class="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg mx-4 overflow-hidden transform transition-all">
+            <button onclick="closeAboutModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-900 bg-gray-100 hover:bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center transition-colors z-10">
+                <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+            <div class="p-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">👋 Hi, I’m Tjard — and this is Breadagain.</h3>
+                <div class="h-1 w-12 bg-brand rounded mb-6"></div>
+                <div class="space-y-4 text-[15px] text-gray-600 leading-relaxed max-h-[60vh] overflow-y-auto pr-4 scrollbar-thin">
+                    <p>Three years ago, a colleague handed me a living, bubbling jar of wild yeast. It was a sourdough starter born in 2016, named Black Death (yes, really). I had no idea what I was doing — but I was instantly hooked.</p>
+                    <p>My first bake was Joe Semola's "Easy Peasy Sourdough Bread." It wasn't perfect, but it was mine. That feeling of creating something real — with my hands, from simple ingredients — changed everything for me. I call it <strong>BIY: Bake It Yourself.</strong> Sourdough became my way to slow down, create, experiment, and have fun — even when the loaves turned out weird.</p>
+                    
+                    <h4 class="font-bold text-gray-900 text-base mt-6">🍞 My Style</h4>
+                    <p>I love working with a mix of wheat, rye, and spelt, typically around 75% hydration — and yes, I still remember my first game-changer: chocolate sourdough. That was the moment it really clicked. I'm not a trained baker — just a home baker figuring things out as I go.</p>
+
+                    <h4 class="font-bold text-gray-900 text-base mt-6">📒 Why I Made This Planner</h4>
+                    <p>When I started, I really wished something like this existed. A place to track my starter, understand hydration, avoid overproofed disasters, and repeat successful bakes.</p>
+                    <p>So I created it — for beginners, for home bakers, and for anyone trying to figure it out loaf by loaf. This planner comes from experience — not perfection. Use it however you like, adapt it to your rhythm, and most importantly: enjoy the process.</p>
+                </div>
+            </div>
+            <div class="bg-gray-50 p-6 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="text-sm font-medium text-gray-900">
+                    Find Me on Instagram
+                    <span class="block text-xs text-gray-500 font-normal">Learnings, failures, templates, & funny videos</span>
+                </div>
+                <a href="https://instagram.com/breadagain__" target="_blank" class="flex items-center gap-2 bg-gradient-to-tr from-[#FFDC80] via-[#F56040] to-[#C13584] hover:opacity-90 text-white px-5 py-2.5 rounded-lg text-sm font-bold transition-opacity w-full sm:w-auto justify-center shadow-md">
+                    <i data-lucide="instagram" class="w-4 h-4 text-white fill-current"></i> @breadagain__
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function openAboutModal(e) {
+            if (e) e.preventDefault();
+            const modal = document.getElementById('about-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+            if (window.lucide) window.lucide.createIcons();
+        }
+        function closeAboutModal() {
+            const modal = document.getElementById('about-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+    </script>
+
+    
+    <!-- Checkout Interstitial Modal -->
+    <div id="checkout-modal" class="fixed inset-0 z-[10000] hidden items-center justify-center transition-all">
+        <div class="absolute inset-0 bg-gray-900/80 backdrop-blur-md" onclick="cancelCheckout()"></div>
+        <div class="relative bg-white rounded-2xl shadow-2xl w-full max-w-md mx-4 overflow-hidden transform scale-95 opacity-0 transition-all duration-300 border-2 border-brand/20" id="checkout-modal-content">
+            
+            <div class="p-8 pb-6 text-center">
+                <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-5 shadow-inner border border-blue-100">
+                    <i data-lucide="shield-check" class="w-8 h-8"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Secure Checkout</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-6">Transferring you to our official payment processing partner, <strong>Digistore24</strong>, to complete your transaction securely.</p>
+                
+                <!-- Digistore Sandboxed Iframe (Prevents Main DOM Hijacking) -->
+                <div class="flex justify-center items-center bg-gray-50/50 rounded-xl mb-6 relative overflow-hidden w-full h-[80px]">
+                    <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body { margin: 0; display: flex; justify-content: center; align-items: center; background: transparent; overflow: hidden; }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;script type='text/javascript' src='https://www.digistore24.com/trusted-badge/44045/KjfjLyEIMXED85P/salespage'&gt;&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;" class="w-[300px] h-[100px] border-none absolute" scrolling="no"></iframe>
+                </div>
+                
+                <div class="flex items-center justify-center gap-3 text-sm font-bold text-brand bg-brand/10 w-full px-5 py-3 rounded-xl mb-4">
+                    <div class="w-4 h-4 border-2 border-brand border-t-transparent rounded-full animate-spin"></div>
+                    Redirecting automatically...
+                </div>
+                
+                <!-- Explicit Cancellation options added based on User Feedback -->
+                <div class="flex flex-col gap-2">
+                    <a id="checkout-fallback" href="https://www.checkout-ds24.com/product/681362" class="block w-full py-2.5 bg-gray-900 text-white rounded-lg text-sm font-semibold hover:bg-gray-800 transition-colors">
+                        Proceed to Secure Checkout Immediately
+                    </a>
+                    <button onclick="cancelCheckout()" class="block w-full py-2 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-lg text-sm font-medium transition-colors">
+                        Cancel Redirect
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let checkoutTimeoutId = null;
+
+        function triggerCheckout(e, checkoutUrl) {
+            if (e) e.preventDefault();
+            const modal = document.getElementById('checkout-modal');
+            const content = document.getElementById('checkout-modal-content');
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+            
+            // Trigger animation
+            setTimeout(() => {
+                content.classList.remove('scale-95', 'opacity-0');
+                content.classList.add('scale-100', 'opacity-100');
+            }, 10);
+            
+            if (window.lucide) window.lucide.createIcons();
+            
+            // Execute redirect after 6.0 seconds to give ample cancellation time
+            checkoutTimeoutId = setTimeout(() => {
+                window.location.href = checkoutUrl;
+            }, 6000); 
+        }
+
+        function cancelCheckout() {
+            if (checkoutTimeoutId) clearTimeout(checkoutTimeoutId);
+            
+            const modal = document.getElementById('checkout-modal');
+            const content = document.getElementById('checkout-modal-content');
+            
+            content.classList.add('scale-95', 'opacity-0');
+            content.classList.remove('scale-100', 'opacity-100');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+    </script>
+</body>
+</html>

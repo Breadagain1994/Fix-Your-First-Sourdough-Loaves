@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Sourdough Library | Breadagain</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { brand: { DEFAULT: '#D69A3A', hover: '#C98A3D' } },
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #FAFBFC; }
+        
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] summary ~ * {
+            animation: sweep .3s ease-in-out;
+        }
+        @keyframes sweep {
+            0%    {opacity: 0; transform: translateY(-10px)}
+            100%  {opacity: 1; transform: translateY(0)}
+        }
+        
+        /* Sidebar styling for smooth active state */
+        .nav-link.active {
+            color: #D69A3A;
+            font-weight: 600;
+            border-left: 2px solid #D69A3A;
+            padding-left: 10px;
+        }
+        .nav-link {
+            border-left: 2px solid transparent;
+            padding-left: 10px;
+            transition: all 0.2s;
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-900">
+
+    <!-- Navigation -->
+        <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-[#E5E7EB] z-[9999] transition-all duration-300">
+        <div class="max-w-[1200px] mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="enterprise.html" class="font-bold text-xl tracking-tight text-[#0A0A0A]">Sourdough Home<span class="text-brand">.</span></a>
+            <div class="hidden lg:flex items-center space-x-8 text-sm font-medium text-[#6B7280]">
+                <a href="enterprise.html" class="hover:text-brand transition-colors">The Fermentery</a>
+                <a href="library.html" class="hover:text-brand transition-colors">Library</a>
+                <a href="gear.html" class="hover:text-brand transition-colors">Hardware</a>
+                <a href="mixins.html" class="hover:text-brand transition-colors">Mix-Ins</a>
+                <a href="calculator.html" class="hover:text-brand transition-colors">Calculator</a>
+            </div>
+            <div class="flex items-center">
+                <a href="#" onclick="triggerCheckout(event, 'https://www.checkout-ds24.com/product/681362')" class="bg-brand hover:bg-[#C98A3D] text-white px-5 py-2 rounded-lg text-sm font-medium shadow-sm hover:shadow-md transition-all duration-200">Get The System</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="pt-32 pb-16 bg-gray-900 text-white border-b border-gray-800">
+        <div class="max-w-[1200px] mx-auto px-6">
+            <span class="inline-block px-3 py-1 bg-brand/20 text-brand text-xs font-bold uppercase tracking-wider rounded-full mb-6">Master Documentation Library</span>
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6">The Breadagain Database</h1>
+            <p class="text-lg text-gray-400 leading-relaxed max-w-[800px]">An exhaustive repository detailing the biological, chemical, and structural frameworks required to map and control fermentation. Unfold modules below to deploy exact theoretical constructs.</p>
+        </div>
+    </header>
+
+    <main class="max-w-[1200px] mx-auto px-6 py-12 flex flex-col md:flex-row gap-12">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="w-full md:w-72 flex-shrink-0">
+            <div class="sticky top-24 bg-white border border-gray-200 rounded-xl p-6 shadow-sm hidden md:block">
+                <h3 class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-6">Directory Nodes</h3>
+                <ul class="space-y-4 text-sm text-gray-600">
+                    <li><a href="#how-sourdough-works" class="nav-link block hover:text-brand">1. How Sourdough Works</a></li>
+                    <li><a href="#history" class="nav-link block hover:text-brand">2. The History of Sourdough</a></li>
+                    <li><a href="#starter-init" class="nav-link block hover:text-brand">3. Making a Sourdough Starter</a></li>
+                    <li><a href="#starter-types" class="nav-link block hover:text-brand">4. Sourdough Starter Types</a></li>
+                    <li><a href="#flour-types" class="nav-link block hover:text-brand">5. Flour Types & Architectures</a></li>
+                    <li><a href="#glossary" class="nav-link block hover:text-brand">6. The Complete Glossary</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Content Area with Deep Accordions -->
+        <div class="flex-1 space-y-12">
+            
+            <!-- SECTION 1 -->
+            <section id="how-sourdough-works" class="scroll-mt-24">
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 border-b border-gray-200 pb-4 mb-6">1. How Sourdough Works</h2>
+                
+                <details class="group bg-white rounded-xl border border-gray-200 mb-4 overflow-hidden" open>
+                    <summary class="flex justify-between items-center font-bold text-lg p-6 cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors">
+                        <span class="flex items-center gap-3"><i data-lucide="microscope" class="text-brand w-5 h-5"></i> 1.1 Enzymatic Reactions</span>
+                        <span class="transition group-open:rotate-180"><i data-lucide="chevron-down" class="text-gray-400"></i></span>
+                    </summary>
+                    <div class="p-6 border-t border-gray-200 text-gray-600 leading-relaxed space-y-4">
+                        <p>The entire sourdough system begins the exact second hydration occurs. Flour alone is a dormant starch complex. When water is introduced during the initial mixing phase (often isolated as the <strong>autolyse protocol</strong>), specialized enzymes known as <em>amylase</em> are instantly activated.</p>
+                        <p>Amylase acts as the primary demolition crew of your dough structure. It systematically breaks down the complex carbohydrate starch walls into highly soluble simple sugars (primarily maltose). These simple sugars are what fuel the secondary stage of organisms—the yeast and bacteria.</p>
+                        <p>Without this critical enzymatic breakdown, your culture would starve. Over-hydrating or leaving the dough in a warm environment for too long speeds up enzymatic action, eventually dissolving the entire gluten matrix into an unsalvageable soup.</p>
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-xl border border-gray-200 mb-4 overflow-hidden">
+                    <summary class="flex justify-between items-center font-bold text-lg p-6 cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors">
+                        <span class="flex items-center gap-3"><i data-lucide="wind" class="text-brand w-5 h-5"></i> 1.2 Wild Yeast Ecosystem</span>
+                        <span class="transition group-open:rotate-180"><i data-lucide="chevron-down" class="text-gray-400"></i></span>
+                    </summary>
+                    <div class="p-6 border-t border-gray-200 text-gray-600 leading-relaxed space-y-4">
+                        <p>Yeast are single-celled fungi naturally present on the outer bran layer of wheat berries. In sourdough, we primarily cultivate <em>Saccharomyces exiguus</em>, in strict contrast to the <em>Saccharomyces cerevisiae</em> utilized in commercial baker's yeast.</p>
+                        <p>Once the amylase enzymes convert starch into maltose, the wild yeast consume these sugars. As a byproduct of their consumption, they emit ethanol and carbon dioxide (CO2). This CO2 gas is the architectural lifting mechanism of bread. It becomes trapped within the elastic gluten network, causing the volumetric expansion known as the <em>rise</em>.</p>
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-xl border border-gray-200 mb-4 overflow-hidden">
+                    <summary class="flex justify-between items-center font-bold text-lg p-6 cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors">
+                        <span class="flex items-center gap-3"><i data-lucide="flask-round" class="text-brand w-5 h-5"></i> 1.3 Lactic Acid Bacteria (LAB)</span>
+                        <span class="transition group-open:rotate-180"><i data-lucide="chevron-down" class="text-gray-400"></i></span>
+                    </summary>
+                    <div class="p-6 border-t border-gray-200 text-gray-600 leading-relaxed space-y-4">
+                        <p>The defining characteristic of sourdough isn't yeast—it is bacteria. Lactic Acid Bacteria (specifically <em>Lactobacillus</em>) outnumber wild yeast cells 100 to 1 inside a healthy culture.</p>
+                        <p>The LAB exist in a perfect symbiotic relationship with the yeast. They consume different sugars to avoid competition, and in return, they produce <strong>lactic acid</strong> (yielding a mild yogurt flavor) and <strong>acetic acid</strong> (yielding a sharp, pungent vinegar flavor). This high acidity naturally defends the dough against mold and foreign contaminants, effectively acting as a biological shield and a natural preservative that extends the bread's shelf-life significantly.</p>
+                    </div>
+                </details>
+            </section>
+
+            <!-- SECTION 2 -->
+            <section id="history" class="scroll-mt-24 pt-12">
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 border-b border-gray-200 pb-4 mb-6">2. The History of Sourdough</h2>
+                
+                <details class="group bg-white rounded-xl border border-gray-200 mb-4 overflow-hidden">
+                    <summary class="flex justify-between items-center font-bold text-lg p-6 cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors">
+                        <span class="flex items-center gap-3"><i data-lucide="landmark" class="text-brand w-5 h-5"></i> 2.1 The Egyptian Origins</span>
+                        <span class="transition group-open:rotate-180"><i data-lucide="chevron-down" class="text-gray-400"></i></span>
+                    </summary>
+                    <div class="p-6 border-t border-gray-200 text-gray-600 leading-relaxed space-y-4">
+                        <p>The origin of leavened bread traces back to around 3000 BCE in Ancient Egypt. Before this chronological milestone, all civilizations consumed flatbreads constructed from porridge.</p>
+                        <p>Given that Egyptian brewers and bakers shared identical working environments, it is theorized that airborne wild yeast or a spilled vessel of fermenting beer inadvertently inoculated a batch of flatbread dough. The dough was abandoned long enough for fermentation to map out its structure. When baked, the heat expansion produced a light, aerated loaf. This accidental biological protocol became the foundational template for all modern baking.</p>
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-xl border border-gray-200 mb-4 overflow-hidden">
+                    <summary class="flex justify-between items-center font-bold text-lg p-6 cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors">
+                        <span class="flex items-center gap-3"><i data-lucide="factory" class="text-brand w-5 h-5"></i> 2.2 Industrialization & The Fall</span>
+                        <span class="transition group-open:rotate-180"><i data-lucide="chevron-down" class="text-gray-400"></i></span>
+                    </summary>
+                    <div class="p-6 border-t border-gray-200 text-gray-600 leading-relaxed space-y-4">
+                        <p>For thousands of years, the slow, acidic fermentation of wild sourdough matrices was the only methodology known to mankind. In the mid-19th century, following Louis Pasteur's microscopic breakthroughs mapping yeast cells, the commercial food sector engineered an isolation protocol.</p>
+                        <p>They isolated a hyper-aggressive, singular strain of yeast (<em>baker's yeast</em>) and eliminated the bacteria entirely. This mechanized the baking process, transforming bread making from a 24-hour biological cycle into a 2-hour manufacturing speedrun. However, without the long timeline and acidic LAB to break down phytic acid (the anti-nutrient in wheat), bread transitioned from a digestible superfood into heavy, bland starch that triggers mass gluten intolerance in modern populations.</p>
+                    </div>
+                </details>
+            </section>
+
+            <!-- SECTION 3 -->
+            <section id="starter-init" class="scroll-mt-24 pt-12">
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 border-b border-gray-200 pb-4 mb-6">3. Making a Sourdough Starter</h2>
+                
+                <details class="group bg-white rounded-xl border border-gray-200 mb-4 overflow-hidden">
+                    <summary class="flex justify-between items-center font-bold text-lg p-6 cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors">
+                        <span class="flex items-center gap-3"><i data-lucide="calculator" class="text-brand w-5 h-5"></i> 3.1 Establishing Baker's Math</span>
+                        <span class="transition group-open:rotate-180"><i data-lucide="chevron-down" class="text-gray-400"></i></span>
+                    </summary>
+                    <div class="p-6 border-t border-gray-200 text-gray-600 leading-relaxed space-y-4">
+                        <p>Before initializing a culture, volume measurements (cups and spoons) must be permanently abandoned. Professional protocols require digital gram scales and <strong>Baker's Percentages</strong>.</p>
+                        <p>In baker's math, the total flour amount is <strong>always 100%</strong>. Every other input variable is expressed as a percentage relative to the flour base. If a recipe calls for 1000g of flour and 750g of water, the hydration ratio is exactly 75%. If you require 20g of salt, your salt input is 2%. This mathematical framework ensures flawless scaling architecture regardless of batch size.</p>
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-xl border border-gray-200 mb-4 overflow-hidden">
+                    <summary class="flex justify-between items-center font-bold text-lg p-6 cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors">
+                        <span class="flex items-center gap-3"><i data-lucide="activity" class="text-brand w-5 h-5"></i> 3.2 The Initialization Process (Days 1-14)</span>
+                        <span class="transition group-open:rotate-180"><i data-lucide="chevron-down" class="text-gray-400"></i></span>
+                    </summary>
+                    <div class="p-6 border-t border-gray-200 text-gray-600 leading-relaxed space-y-4">
+                        <ul class="space-y-4">
+                            <li><strong>Phase Alpha (Days 1-3) / The False Surge:</strong> By mixing 50g whole grain flour with 50g water, you create an uncalibrated slurry. Over the next 48 hours, you may witness extreme, rapid expansion. This is almost never yeast; it is off-gassing from rogue <em>Leuconostoc</em> bacteria fighting for territorial dominance. Do not attempt to bake with this. Discard 50%, re-feed 50g/50g.</li>
+                            <li><strong>Phase Beta (Days 4-7) / The Dormant Valley:</strong> The environment becomes highly acidic. The rogue bacteria perish. Suddenly, all activity ceases. The starter will look flat, smell like vomit or nail polish remover, and exhibit zero bubbles. This is the <em>purification phase</em>. Continue the strict daily feeding ratios and trust the data.</li>
+                            <li><strong>Phase Gamma (Days 8-14) / Ecosystem Domination:</strong> The *Lactobacillus* and wild yeast populations surge and take permanent control of your jar's ecosystem. The aroma pivots to a pleasant, milky yeast or cider scent. The culture now predictably doubles or triples in volume within a distinct 4-8 hour timeline. Your framework is now active.</li>
+                        </ul>
+                    </div>
+                </details>
+                
+                <details class="group bg-white rounded-xl border border-gray-200 mb-4 overflow-hidden">
+                    <summary class="flex justify-between items-center font-bold text-lg p-6 cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors">
+                        <span class="flex items-center gap-3"><i data-lucide="check-circle" class="text-brand w-5 h-5"></i> 3.3 Determining Readiness</span>
+                        <span class="transition group-open:rotate-180"><i data-lucide="chevron-down" class="text-gray-400"></i></span>
+                    </summary>
+                    <div class="p-6 border-t border-gray-200 text-gray-600 leading-relaxed space-y-4">
+                        <p>How do you verify if the starter is ready to lift bread? Rely on verifiable metrics.</p>
+                        <p><strong>1. Volumetric Delta:</strong> It must expand by at least 100% (double in size) after a 1:1:1 feed.</p>
+                        <p><strong>2. Structural Meniscus:</strong> When the culture reaches peak fermentation, the surface should be beautifully domed (convex). If the center collapses inward, it has exhausted its fuel and is moving into an over-fermented, highly acidic state.</p>
+                        <p><strong>3. The Float Test (Optional):</strong> A properly aerated spoonful of starter placed gently in room-temperature water should float buoyantly. (Note: Stiff starters or rye starters may fail this test purely due to dense flour mass, despite being highly active).</p>
+                    </div>
+                </details>
+            </section>
+
+            <!-- SECTION 4 -->
+            <section id="starter-types" class="scroll-mt-24 pt-12">
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 border-b border-gray-200 pb-4 mb-6">4. Sourdough Starter Types</h2>
+                
+                <details class="group bg-white rounded-xl border border-gray-200 mb-4 overflow-hidden">
+                    <summary class="flex justify-between items-center font-bold text-lg p-6 cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors">
+                        <span class="flex items-center gap-3"><i data-lucide="droplet-water" class="text-brand w-5 h-5"></i> 4.1 Liquid Starter (100% Hydration)</span>
+                        <span class="transition group-open:rotate-180"><i data-lucide="chevron-down" class="text-gray-400"></i></span>
+                    </summary>
+                    <div class="p-6 border-t border-gray-200 text-gray-600 leading-relaxed space-y-4">
+                        <p>The standard operational default. Maintained at exactly equal weights of flour and water (e.g., 50g starter / 50g flour / 50g water).</p>
+                        <p>The high mobility matrix allows rapid cellular reproduction. Bacteria travel freely, accelerating the fermentation timeline. It favors the production of <em>lactic acid</em> over acetic acid, resulting in bread with a delicate, milky, yogurt-style tang rather than a sharp bite.</p>
+                    </div>
+                </details>
+                
+                <details class="group bg-white rounded-xl border border-gray-200 mb-4 overflow-hidden">
+                    <summary class="flex justify-between items-center font-bold text-lg p-6 cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors">
+                        <span class="flex items-center gap-3"><i data-lucide="mountain" class="text-brand w-5 h-5"></i> 4.2 Stiff Starter (50% Hydration)</span>
+                        <span class="transition group-open:rotate-180"><i data-lucide="chevron-down" class="text-gray-400"></i></span>
+                    </summary>
+                    <div class="p-6 border-t border-gray-200 text-gray-600 leading-relaxed space-y-4">
+                        <p>Maintained as a dense, dough-like ball utilizing half the amount of water (e.g., 50g starter / 100g flour / 50g water).</p>
+                        <p>Restricting hydration paralyzes bacterial mobility. This drastically extends the fermentation runway, allowing you to ferment it over longer durations without exhausting the yeast. The dense ecosystem forces heavily constrained anaerobic activity, triggering extreme production of <em>acetic acid</em>. This is how San Francisco bakeries engineer their brutally sour "vinegar-sharp" signature profiles.</p>
+                    </div>
+                </details>
+                
+                <details class="group bg-white rounded-xl border border-gray-200 mb-4 overflow-hidden">
+                    <summary class="flex justify-between items-center font-bold text-lg p-6 cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors">
+                        <span class="flex items-center gap-3"><i data-lucide="gem" class="text-brand w-5 h-5"></i> 4.3 Lievito Madre / Pasta Madre</span>
+                        <span class="transition group-open:rotate-180"><i data-lucide="chevron-down" class="text-gray-400"></i></span>
+                    </summary>
+                    <div class="p-6 border-t border-gray-200 text-gray-600 leading-relaxed space-y-4">
+                        <p>An elite tier of stiff starter operating between 40—50% hydration, managed under a completely different thermal and chemical protocol. It is specifically engineered to mitigate acidity as aggressively as possible, yielding pure yeast lifting power.</p>
+                        <p>Often maintained via complex daily water-baths (bagnetto) which physically wash away excess acids. This highly intensive culture is mandatory for enriched, high-fat, high-sugar doughs like authentic Italian Panettone, where excess acid would immediately destroy the delicate, fragile gluten network.</p>
+                    </div>
+                </details>
+            </section>
+
+            <!-- SECTION 5 -->
+            <section id="flour-types" class="scroll-mt-24 pt-12">
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 border-b border-gray-200 pb-4 mb-6">5. Flour Types & Architecture</h2>
+                
+                <details class="group bg-white rounded-xl border border-gray-200 mb-4 overflow-hidden">
+                    <summary class="flex justify-between items-center font-bold text-lg p-6 cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors">
+                        <span class="flex items-center gap-3"><i data-lucide="wheat" class="text-brand w-5 h-5"></i> 5.1 Wheat Anatomy & Ash Content</span>
+                        <span class="transition group-open:rotate-180"><i data-lucide="chevron-down" class="text-gray-400"></i></span>
+                    </summary>
+                    <div class="p-6 border-t border-gray-200 text-gray-600 leading-relaxed space-y-4">
+                        <p>A kernel of wheat consists of three distinct biological zones: the <strong>Endosperm</strong> (pure starch/protein), the <strong>Bran</strong> (fiber/outer shell), and the <strong>Germ</strong> (the highly nutritious reproductive embryo). By altering the extraction rate, mills output completely different operational metrics.</p>
+                        <p><strong>Ash Content</strong> refers to the European classification method (e.g., T55, Type 812). It measures the mineral residue left behind if you were to incinerate the flour. Higher ash equates to higher bran/germ content. Note: Bran acts like microscopic glass shards inside your dough, physically severing the gluten strands and lowering your total volume potential.</p>
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-xl border border-gray-200 mb-4 overflow-hidden">
+                    <summary class="flex justify-between items-center font-bold text-lg p-6 cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors">
+                        <span class="flex items-center gap-3"><i data-lucide="layers" class="text-brand w-5 h-5"></i> 5.2 Protein Architecture (Gluten)</span>
+                        <span class="transition group-open:rotate-180"><i data-lucide="chevron-down" class="text-gray-400"></i></span>
+                    </summary>
+                    <div class="p-6 border-t border-gray-200 text-gray-600 leading-relaxed space-y-4">
+                        <p>Gluten does not exist organically in flour. Flour contains two latent proteins: <em>Gliadin</em> (provides extensibility/stretch) and <em>Glutenin</em> (provides elasticity/bounce-back). When water is introduced, they mechanically link together to form the gluten matrix.</p>
+                        <ul class="list-disc pl-5 mt-4 space-y-2 text-sm text-gray-700 font-medium">
+                            <li><strong>All-Purpose Flour (10-11.5% Protein):</strong> Lacks the structural density to safely manage high hydration (80%+). The matrix will likely collapse into a puddle during baking.</li>
+                            <li><strong>Bread Flour (12-14% Protein):</strong> The enterprise standard. Provides immense tensile strength capable of expanding dramatically to trap expansive CO2 pockets without tearing.</li>
+                            <li><strong>Type "00" Flour (Finely Milled):</strong> An Italian classification representing grind size, not protein. It hydrates exceptionally fast but does not necessarily imply high gluten potential. It is used predominately in rapid, thin-crust pizza architecture.</li>
+                        </ul>
+                    </div>
+                </details>
+            </section>
+
+            <!-- SECTION 6 -->
+            <section id="glossary" class="scroll-mt-24 pt-12">
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 border-b border-gray-200 pb-4 mb-6">6. The Complete Lexicon (Glossary)</h2>
+                
+                <details class="group bg-white rounded-xl border border-gray-200 mb-4 overflow-hidden" open>
+                    <summary class="flex justify-between items-center font-bold text-lg p-6 cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors">
+                        <span class="flex items-center gap-3"><i data-lucide="book-open" class="text-brand w-5 h-5"></i> Lexicon Terminology</span>
+                        <span class="transition group-open:rotate-180"><i data-lucide="chevron-down" class="text-gray-400"></i></span>
+                    </summary>
+                    <div class="p-6 border-t border-gray-200 text-gray-600 text-sm">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <h5 class="font-bold text-gray-900 border-l-4 border-brand pl-3 mb-2">Autolyse (Auto-leese)</h5>
+                                <p class="leading-relaxed">A strictly controlled preliminary resting phase where only flour and water are mixed. This gives amylase enzymes a head-start on starch breakdown and passively hydrates the complex gluten proteins before the introduction of salt (which instantly tightens the matrix).</p>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-900 border-l-4 border-brand pl-3 mb-2">Bulk Fermentation</h5>
+                                <p class="leading-relaxed">The primary operational timeline. The stopwatch begins the exact moment your starter is inoculated into the flour, and ends the moment you divide and shape your final loaf. The goal is sufficient volumetric increase without exhausting fuel reserves.</p>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-900 border-l-4 border-brand pl-3 mb-2">Coil Folds</h5>
+                                <p class="leading-relaxed">An advanced mechanical intervention applied during bulk fermentation. Instead of "punching the dough down" (which catastrophically destroys gas pockets), the baker gently lifts the dough structure in the center, allowing the ends to fold delicately underneath. This weaves the gluten strands into a highly durable mesh.</p>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-900 border-l-4 border-brand pl-3 mb-2">Lamination</h5>
+                                <p class="leading-relaxed">A technique involving stretching the dough out incredibly thin across a wet counter (creating a massive surface area) before folding it back into a tight parcel. Crucial for mixing dense inclusions/mix-ins or maximizing structural tension.</p>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-900 border-l-4 border-brand pl-3 mb-2">Oven Spring</h5>
+                                <p class="leading-relaxed">The explosive vertical trajectory of the loaf during the first 15-20 minutes of baking. Before the crust thermally coagulates into a hard shell, rapidly expanding internal steam forces the elastic gluten network to stretch upward through your pre-determined cut zones (scoring).</p>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-900 border-l-4 border-brand pl-3 mb-2">Retardation (Cold Ferment)</h5>
+                                <p class="leading-relaxed">Transferring shaped dough into a 4°C refrigerator. The extreme thermal drop paralyzes wild yeast reproduction but allows bacterial acid production to continue at a slow crawl. This strategy drastically enhances flavor complexity and hardens the dough for precision-scoring.</p>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+            </section>
+
+            <!-- Footer CTA directly in content -->
+            <div class="mt-20 bg-brand/10 border border-brand/20 rounded-xl p-10 text-center animate-fade-in">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Stop Engineering In The Dark.</h3>
+                <p class="text-gray-600 mb-8 max-w-[500px] mx-auto text-lg">Theory is irrelevant without execution. Deploy the printable tracking frameworks directly into your kitchen laboratory.</p>
+                <a href="#" onclick="triggerCheckout(event, 'https://www.checkout-ds24.com/product/681362')" class="inline-flex items-center justify-center bg-brand hover:bg-brand-hover text-white h-14 px-10 rounded-[8px] font-bold text-lg shadow-sm hover:shadow-lg transition-all duration-200 hover:-translate-y-1">
+                    Deploy The Consistency System
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#111111] text-white pt-10 pb-10 border-t border-gray-800">
+        <div class="max-w-[1200px] mx-auto px-6 text-center text-sm text-[#888888]">
+            <p>&copy; 2026 Tjardbooks / Breadagain Ecosystem. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        
+        // Simple script to highlight active nav link
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        document.querySelectorAll('.nav-link').forEach(link => {
+                            link.classList.remove('active');
+                            if(link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, { threshold: 0.2, rootMargin: "-100px 0px -50% 0px" });
+
+            document.querySelectorAll('section[id]').forEach((section) => {
+                observer.observe(section);
+            });
+        });
+    </script>
+
+    <!-- About Modal -->
+    <div id="about-modal" class="fixed inset-0 z-[100] hidden items-center justify-center">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-gray-900/40 backdrop-blur-sm transition-opacity" onclick="closeAboutModal()"></div>
+        <!-- Modal Content -->
+        <div class="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg mx-4 overflow-hidden transform transition-all">
+            <button onclick="closeAboutModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-900 bg-gray-100 hover:bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center transition-colors z-10">
+                <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+            <div class="p-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">👋 Hi, I’m Tjard — and this is Breadagain.</h3>
+                <div class="h-1 w-12 bg-brand rounded mb-6"></div>
+                <div class="space-y-4 text-[15px] text-gray-600 leading-relaxed max-h-[60vh] overflow-y-auto pr-4 scrollbar-thin">
+                    <p>Three years ago, a colleague handed me a living, bubbling jar of wild yeast. It was a sourdough starter born in 2016, named Black Death (yes, really). I had no idea what I was doing — but I was instantly hooked.</p>
+                    <p>My first bake was Joe Semola's "Easy Peasy Sourdough Bread." It wasn't perfect, but it was mine. That feeling of creating something real — with my hands, from simple ingredients — changed everything for me. I call it <strong>BIY: Bake It Yourself.</strong> Sourdough became my way to slow down, create, experiment, and have fun — even when the loaves turned out weird.</p>
+                    
+                    <h4 class="font-bold text-gray-900 text-base mt-6">🍞 My Style</h4>
+                    <p>I love working with a mix of wheat, rye, and spelt, typically around 75% hydration — and yes, I still remember my first game-changer: chocolate sourdough. That was the moment it really clicked. I'm not a trained baker — just a home baker figuring things out as I go.</p>
+
+                    <h4 class="font-bold text-gray-900 text-base mt-6">📒 Why I Made This Planner</h4>
+                    <p>When I started, I really wished something like this existed. A place to track my starter, understand hydration, avoid overproofed disasters, and repeat successful bakes.</p>
+                    <p>So I created it — for beginners, for home bakers, and for anyone trying to figure it out loaf by loaf. This planner comes from experience — not perfection. Use it however you like, adapt it to your rhythm, and most importantly: enjoy the process.</p>
+                </div>
+            </div>
+            <div class="bg-gray-50 p-6 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="text-sm font-medium text-gray-900">
+                    Find Me on Instagram
+                    <span class="block text-xs text-gray-500 font-normal">Learnings, failures, templates, & funny videos</span>
+                </div>
+                <a href="https://instagram.com/breadagain__" target="_blank" class="flex items-center gap-2 bg-gradient-to-tr from-[#FFDC80] via-[#F56040] to-[#C13584] hover:opacity-90 text-white px-5 py-2.5 rounded-lg text-sm font-bold transition-opacity w-full sm:w-auto justify-center shadow-md">
+                    <i data-lucide="instagram" class="w-4 h-4 text-white fill-current"></i> @breadagain__
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function openAboutModal(e) {
+            if (e) e.preventDefault();
+            const modal = document.getElementById('about-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+            if (window.lucide) window.lucide.createIcons();
+        }
+        function closeAboutModal() {
+            const modal = document.getElementById('about-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+    </script>
+
+    
+    <!-- Checkout Interstitial Modal -->
+    <div id="checkout-modal" class="fixed inset-0 z-[10000] hidden items-center justify-center transition-all">
+        <div class="absolute inset-0 bg-gray-900/80 backdrop-blur-md" onclick="cancelCheckout()"></div>
+        <div class="relative bg-white rounded-2xl shadow-2xl w-full max-w-md mx-4 overflow-hidden transform scale-95 opacity-0 transition-all duration-300 border-2 border-brand/20" id="checkout-modal-content">
+            
+            <div class="p-8 pb-6 text-center">
+                <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-5 shadow-inner border border-blue-100">
+                    <i data-lucide="shield-check" class="w-8 h-8"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Secure Checkout</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-6">Transferring you to our official payment processing partner, <strong>Digistore24</strong>, to complete your transaction securely.</p>
+                
+                <!-- Digistore Sandboxed Iframe (Prevents Main DOM Hijacking) -->
+                <div class="flex justify-center items-center bg-gray-50/50 rounded-xl mb-6 relative overflow-hidden w-full h-[80px]">
+                    <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body { margin: 0; display: flex; justify-content: center; align-items: center; background: transparent; overflow: hidden; }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;script type='text/javascript' src='https://www.digistore24.com/trusted-badge/44045/KjfjLyEIMXED85P/salespage'&gt;&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;" class="w-[300px] h-[100px] border-none absolute" scrolling="no"></iframe>
+                </div>
+                
+                <div class="flex items-center justify-center gap-3 text-sm font-bold text-brand bg-brand/10 w-full px-5 py-3 rounded-xl mb-4">
+                    <div class="w-4 h-4 border-2 border-brand border-t-transparent rounded-full animate-spin"></div>
+                    Redirecting automatically...
+                </div>
+                
+                <!-- Explicit Cancellation options added based on User Feedback -->
+                <div class="flex flex-col gap-2">
+                    <a id="checkout-fallback" href="https://www.checkout-ds24.com/product/681362" class="block w-full py-2.5 bg-gray-900 text-white rounded-lg text-sm font-semibold hover:bg-gray-800 transition-colors">
+                        Proceed to Secure Checkout Immediately
+                    </a>
+                    <button onclick="cancelCheckout()" class="block w-full py-2 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-lg text-sm font-medium transition-colors">
+                        Cancel Redirect
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let checkoutTimeoutId = null;
+
+        function triggerCheckout(e, checkoutUrl) {
+            if (e) e.preventDefault();
+            const modal = document.getElementById('checkout-modal');
+            const content = document.getElementById('checkout-modal-content');
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+            
+            // Trigger animation
+            setTimeout(() => {
+                content.classList.remove('scale-95', 'opacity-0');
+                content.classList.add('scale-100', 'opacity-100');
+            }, 10);
+            
+            if (window.lucide) window.lucide.createIcons();
+            
+            // Execute redirect after 6.0 seconds to give ample cancellation time
+            checkoutTimeoutId = setTimeout(() => {
+                window.location.href = checkoutUrl;
+            }, 6000); 
+        }
+
+        function cancelCheckout() {
+            if (checkoutTimeoutId) clearTimeout(checkoutTimeoutId);
+            
+            const modal = document.getElementById('checkout-modal');
+            const content = document.getElementById('checkout-modal-content');
+            
+            content.classList.add('scale-95', 'opacity-0');
+            content.classList.remove('scale-100', 'opacity-100');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+    </script>
+</body>
+</html>

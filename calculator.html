@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sourdough Hydration Calculator | Breadagain</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { brand: { DEFAULT: '#D69A3A', hover: '#C98A3D' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #FAFBFC; }
+        /* Custom Sliders */
+        input[type=range] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 20px; width: 20px;
+            border-radius: 50%;
+            background: #D69A3A;
+            cursor: pointer;
+            margin-top: -8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%; height: 4px;
+            cursor: pointer;
+            background: #E5E7EB;
+            border-radius: 2px;
+        }
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+        <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-[#E5E7EB] z-[9999] transition-all duration-300">
+        <div class="max-w-[1200px] mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="enterprise.html" class="font-bold text-xl tracking-tight text-[#0A0A0A]">Sourdough Home<span class="text-brand">.</span></a>
+            <div class="hidden lg:flex items-center space-x-8 text-sm font-medium text-[#6B7280]">
+                <a href="enterprise.html" class="hover:text-brand transition-colors">The Fermentery</a>
+                <a href="library.html" class="hover:text-brand transition-colors">Library</a>
+                <a href="gear.html" class="hover:text-brand transition-colors">Hardware</a>
+                <a href="mixins.html" class="hover:text-brand transition-colors">Mix-Ins</a>
+                <a href="calculator.html" class="hover:text-brand transition-colors">Calculator</a>
+            </div>
+            <div class="flex items-center">
+                <a href="#" onclick="triggerCheckout(event, 'https://www.checkout-ds24.com/product/681362')" class="bg-brand hover:bg-[#C98A3D] text-white px-5 py-2 rounded-lg text-sm font-medium shadow-sm hover:shadow-md transition-all duration-200">Get The System</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="pt-32 pb-12 bg-white border-b border-gray-200">
+        <div class="max-w-[800px] mx-auto px-6 text-center">
+            <h1 class="text-4xl font-bold text-gray-900 tracking-tight mb-4">Precision Hydration Calculator</h1>
+            <p class="text-lg text-gray-500 leading-relaxed max-w-[600px] mx-auto">Input your base flour and target hydration. Our system automatically calculates the true baker's math including the water content inherent in your starter.</p>
+        </div>
+    </header>
+
+    <!-- Calculator Logic -->
+    <main class="py-16">
+        <div class="max-w-[1000px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+            
+            <!-- left col: Inputs -->
+            <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm space-y-8">
+                
+                <!-- Loaves & Size -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="font-semibold text-gray-900 block mb-2">Number of Loaves</label>
+                        <div class="flex items-center bg-gray-50 border border-gray-200 rounded-lg px-3 py-2">
+                            <input type="number" id="loaves-input" value="1" min="1" max="20" class="bg-transparent w-full text-right font-bold text-gray-900 outline-none text-lg">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="font-semibold text-gray-900 block mb-2">Flour per Loaf (g)</label>
+                        <div class="flex items-center bg-gray-50 border border-gray-200 rounded-lg px-3 py-2">
+                            <input type="number" id="size-input" value="500" step="50" class="bg-transparent w-full text-right font-bold text-gray-900 outline-none text-lg">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Whole Grain -->
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <label class="font-semibold text-gray-900">Whole Grain Blend</label>
+                        <div class="flex items-center bg-gray-50 border border-gray-200 rounded-lg px-3 py-1">
+                            <input type="number" id="wholegrain-input" value="20" class="bg-transparent w-16 text-right font-bold text-gray-900 outline-none text-lg">
+                            <span class="text-gray-500 ml-1 font-medium">%</span>
+                        </div>
+                    </div>
+                    <input type="range" id="wholegrain-slider" min="0" max="100" step="1" value="20">
+                    <div class="flex justify-between text-xs font-medium text-gray-400 mt-1">
+                        <span>100% White</span>
+                        <span>100% Whole Grain</span>
+                    </div>
+                </div>
+
+                <!-- Hydration -->
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <label class="font-semibold text-gray-900">Target Hydration</label>
+                        <div class="flex items-center bg-gray-50 border border-gray-200 rounded-lg px-3 py-1">
+                            <input type="number" id="hydration-input" value="75" class="bg-transparent w-16 text-right font-bold text-gray-900 outline-none text-lg">
+                            <span class="text-gray-500 ml-1 font-medium">%</span>
+                        </div>
+                    </div>
+                    <input type="range" id="hydration-slider" min="50" max="100" step="1" value="75">
+                    <p class="text-xs text-brand mt-2 font-medium" id="hydration-hint">Starts getting sticky. Use wet hands.</p>
+                </div>
+
+                <!-- Starter -->
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <label class="font-semibold text-gray-900">Starter</label>
+                        <div class="flex items-center bg-gray-50 border border-gray-200 rounded-lg px-3 py-1">
+                            <input type="number" id="starter-input" value="20" class="bg-transparent w-16 text-right font-bold text-gray-900 outline-none text-lg">
+                            <span class="text-gray-500 ml-1 font-medium">%</span>
+                        </div>
+                    </div>
+                    <input type="range" id="starter-slider" min="5" max="50" step="1" value="20">
+                    
+                    <!-- Starter Type Toggle -->
+                    <div class="flex items-center mt-3 gap-4">
+                        <span class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Starter Type:</span>
+                        <select id="starter-type" class="bg-gray-50 border border-gray-200 rounded px-2 py-1 text-sm font-medium outline-none">
+                            <option value="100">Liquid / Regular (100%)</option>
+                            <option value="50">Stiff / Sweet (50%)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Salt -->
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <label class="font-semibold text-gray-900">Salt</label>
+                        <div class="flex items-center bg-gray-50 border border-gray-200 rounded-lg px-3 py-1">
+                            <input type="number" id="salt-input" value="2" class="bg-transparent w-16 text-right font-bold text-gray-900 outline-none text-lg">
+                            <span class="text-gray-500 ml-1 font-medium">%</span>
+                        </div>
+                    </div>
+                    <input type="range" id="salt-slider" min="0" max="4" step="0.5" value="2">
+                </div>
+
+            </div>
+
+            <!-- right col: Output -->
+            <div>
+                <div class="bg-gray-900 rounded-2xl p-8 shadow-xl sticky top-24">
+                    <div class="flex items-center gap-3 mb-8">
+                        <i data-lucide="calculator" class="text-brand w-6 h-6"></i>
+                        <h2 class="text-2xl font-bold text-white">Recipe Output</h2>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-end border-b border-gray-800 pb-3" id="row-breadflour">
+                            <div>
+                                <div class="text-gray-400 text-sm font-medium mb-1">Bread Flour</div>
+                            </div>
+                            <div class="text-2xl font-bold text-white"><span id="out-breadflour">400</span><span class="text-sm text-gray-500 ml-1">g</span></div>
+                        </div>
+
+                        <div class="flex justify-between items-end border-b border-gray-800 pb-3" id="row-wholegrain">
+                            <div>
+                                <div class="text-gray-400 text-sm font-medium mb-1">Whole Grain Flour</div>
+                            </div>
+                            <div class="text-2xl font-bold text-white"><span id="out-wholegrain">100</span><span class="text-sm text-gray-500 ml-1">g</span></div>
+                        </div>
+
+                        <div class="flex justify-between items-end border-b border-gray-800 pb-3">
+                            <div>
+                                <div class="text-gray-400 text-sm font-medium mb-1">Water</div>
+                                <div class="text-brand text-xs font-medium bg-brand/10 inline-block px-2 py-0.5 rounded">Adjusted for starter</div>
+                            </div>
+                            <div class="text-2xl font-bold text-white"><span id="out-water">350</span><span class="text-sm text-gray-500 ml-1">g</span></div>
+                        </div>
+
+                        <div class="flex justify-between items-end border-b border-gray-800 pb-3">
+                            <div>
+                                <div class="text-gray-400 text-sm font-medium mb-1">Starter</div>
+                                <div class="text-xs text-brand mt-1" id="out-starter-type">Liquid (100%)</div>
+                            </div>
+                            <div class="text-2xl font-bold text-white"><span id="out-starter">100</span><span class="text-sm text-gray-500 ml-1">g</span></div>
+                        </div>
+
+                        <div class="flex justify-between items-end border-b border-gray-800 pb-3">
+                            <div>
+                                <div class="text-gray-400 text-sm font-medium mb-1">Salt</div>
+                            </div>
+                            <div class="text-2xl font-bold text-white"><span id="out-salt">10</span><span class="text-sm text-gray-500 ml-1">g</span></div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 bg-gray-800 rounded-xl p-4 flex justify-between items-center">
+                        <span class="text-sm font-medium text-gray-300">Total Dough Weight</span>
+                        <div class="text-xl font-bold text-brand"><span id="out-total">960</span><span class="text-sm ml-1">g</span></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+
+        // Elements
+        const loavesInput = document.getElementById('loaves-input');
+        const sizeInput = document.getElementById('size-input');
+
+        const wgInput = document.getElementById('wholegrain-input');
+        const wgSlider = document.getElementById('wholegrain-slider');
+        
+        const hydInput = document.getElementById('hydration-input');
+        const hydSlider = document.getElementById('hydration-slider');
+        const hydHint = document.getElementById('hydration-hint');
+
+        const starterInput = document.getElementById('starter-input');
+        const starterSlider = document.getElementById('starter-slider');
+        const starterType = document.getElementById('starter-type');
+        
+        const saltInput = document.getElementById('salt-input');
+        const saltSlider = document.getElementById('salt-slider');
+
+        // Outputs
+        const outBreadFlour = document.getElementById('out-breadflour');
+        const outWholeGrain = document.getElementById('out-wholegrain');
+        const rowWholegrain = document.getElementById('row-wholegrain');
+        const outWater = document.getElementById('out-water');
+        const outStarter = document.getElementById('out-starter');
+        const outStarterType = document.getElementById('out-starter-type');
+        const outSalt = document.getElementById('out-salt');
+        const outTotal = document.getElementById('out-total');
+
+        function sync(slider, input) {
+            slider.addEventListener('input', () => {
+                input.value = slider.value;
+                calculate();
+            });
+            input.addEventListener('input', () => {
+                slider.value = input.value;
+                calculate();
+            });
+        }
+
+        sync(wgSlider, wgInput);
+        sync(hydSlider, hydInput);
+        sync(starterSlider, starterInput);
+        sync(saltSlider, saltInput);
+
+        loavesInput.addEventListener('input', calculate);
+        sizeInput.addEventListener('input', calculate);
+        starterType.addEventListener('change', calculate);
+
+        function setHydrationHint(h) {
+            if (h < 65) {
+                hydHint.innerText = "Easy to handle. Denser crumb. Great for beginners.";
+                hydHint.style.color = "#3B82F6";
+            } else if (h < 75) {
+                hydHint.innerText = "Good balance. Nice oven spring. Open crumb.";
+                hydHint.style.color = "#22C55E";
+            } else if (h < 81) {
+                hydHint.innerText = "Sticky but rewarding. Big holes. Light texture.";
+                hydHint.style.color = "#D69A3A";
+            } else {
+                hydHint.innerText = "Focaccia territory. Use oiled hands!";
+                hydHint.style.color = "#EF4444";
+            }
+        }
+
+        function calculate() {
+            let loaves = parseInt(loavesInput.value) || 1;
+            let size = parseFloat(sizeInput.value) || 0;
+            let wgPct = parseFloat(wgInput.value) || 0;
+            let hydPct = parseFloat(hydInput.value) || 0;
+            let starterPct = parseFloat(starterInput.value) || 0;
+            let saltPct = parseFloat(saltInput.value) || 0;
+            let sType = parseInt(starterType.value) || 100;
+
+            let fMain = loaves * size;
+
+            setHydrationHint(hydPct);
+
+            // Flour Blend
+            let wgGrams = Math.round(fMain * (wgPct / 100));
+            let breadFlourGrams = fMain - wgGrams;
+
+            // Starter Math
+            let starterGrams = Math.round(fMain * (starterPct / 100));
+            let starterFlour = 0;
+            let starterWater = 0;
+
+            if (sType === 100) {
+                starterFlour = starterGrams / 2;
+                starterWater = starterGrams / 2;
+                outStarterType.innerText = "Liquid Starter (100%)";
+            } else if (sType === 50) {
+                // 50% hydration = 2 parts flour, 1 part water
+                starterWater = starterGrams / 3;
+                starterFlour = (starterGrams / 3) * 2;
+                outStarterType.innerText = "Stiff Starter (50%)";
+            }
+
+            // True Baker's Math Calculation
+            let totalFlour = fMain + starterFlour;
+            let totalWaterNeeded = totalFlour * (hydPct / 100);
+            
+            let waterGrams = Math.round(totalWaterNeeded - starterWater);
+            let saltGrams = Math.round(totalFlour * (saltPct / 100));
+
+            let totalWeight = fMain + waterGrams + starterGrams + saltGrams;
+
+            // Update UI
+            outBreadFlour.innerText = breadFlourGrams;
+            
+            if (wgGrams > 0) {
+                rowWholegrain.style.display = "flex";
+                outWholeGrain.innerText = wgGrams;
+            } else {
+                rowWholegrain.style.display = "none";
+            }
+
+            outWater.innerText = waterGrams;
+            outStarter.innerText = starterGrams;
+            outSalt.innerText = saltGrams;
+            outTotal.innerText = totalWeight;
+        }
+
+        // Initialize
+        calculate();
+
+    </script>
+
+    <!-- About Modal -->
+    <div id="about-modal" class="fixed inset-0 z-[100] hidden items-center justify-center">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-gray-900/40 backdrop-blur-sm transition-opacity" onclick="closeAboutModal()"></div>
+        <!-- Modal Content -->
+        <div class="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg mx-4 overflow-hidden transform transition-all">
+            <button onclick="closeAboutModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-900 bg-gray-100 hover:bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center transition-colors z-10">
+                <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+            <div class="p-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">👋 Hi, I’m Tjard — and this is Breadagain.</h3>
+                <div class="h-1 w-12 bg-brand rounded mb-6"></div>
+                <div class="space-y-4 text-[15px] text-gray-600 leading-relaxed max-h-[60vh] overflow-y-auto pr-4 scrollbar-thin">
+                    <p>Three years ago, a colleague handed me a living, bubbling jar of wild yeast. It was a sourdough starter born in 2016, named Black Death (yes, really). I had no idea what I was doing — but I was instantly hooked.</p>
+                    <p>My first bake was Joe Semola's "Easy Peasy Sourdough Bread." It wasn't perfect, but it was mine. That feeling of creating something real — with my hands, from simple ingredients — changed everything for me. I call it <strong>BIY: Bake It Yourself.</strong> Sourdough became my way to slow down, create, experiment, and have fun — even when the loaves turned out weird.</p>
+                    
+                    <h4 class="font-bold text-gray-900 text-base mt-6">🍞 My Style</h4>
+                    <p>I love working with a mix of wheat, rye, and spelt, typically around 75% hydration — and yes, I still remember my first game-changer: chocolate sourdough. That was the moment it really clicked. I'm not a trained baker — just a home baker figuring things out as I go.</p>
+
+                    <h4 class="font-bold text-gray-900 text-base mt-6">📒 Why I Made This Planner</h4>
+                    <p>When I started, I really wished something like this existed. A place to track my starter, understand hydration, avoid overproofed disasters, and repeat successful bakes.</p>
+                    <p>So I created it — for beginners, for home bakers, and for anyone trying to figure it out loaf by loaf. This planner comes from experience — not perfection. Use it however you like, adapt it to your rhythm, and most importantly: enjoy the process.</p>
+                </div>
+            </div>
+            <div class="bg-gray-50 p-6 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="text-sm font-medium text-gray-900">
+                    Find Me on Instagram
+                    <span class="block text-xs text-gray-500 font-normal">Learnings, failures, templates, & funny videos</span>
+                </div>
+                <a href="https://instagram.com/breadagain__" target="_blank" class="flex items-center gap-2 bg-gradient-to-tr from-[#FFDC80] via-[#F56040] to-[#C13584] hover:opacity-90 text-white px-5 py-2.5 rounded-lg text-sm font-bold transition-opacity w-full sm:w-auto justify-center shadow-md">
+                    <i data-lucide="instagram" class="w-4 h-4 text-white fill-current"></i> @breadagain__
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function openAboutModal(e) {
+            if (e) e.preventDefault();
+            const modal = document.getElementById('about-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+            if (window.lucide) window.lucide.createIcons();
+        }
+        function closeAboutModal() {
+            const modal = document.getElementById('about-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+    </script>
+
+    
+    <!-- Checkout Interstitial Modal -->
+    <div id="checkout-modal" class="fixed inset-0 z-[10000] hidden items-center justify-center transition-all">
+        <div class="absolute inset-0 bg-gray-900/80 backdrop-blur-md" onclick="cancelCheckout()"></div>
+        <div class="relative bg-white rounded-2xl shadow-2xl w-full max-w-md mx-4 overflow-hidden transform scale-95 opacity-0 transition-all duration-300 border-2 border-brand/20" id="checkout-modal-content">
+            
+            <div class="p-8 pb-6 text-center">
+                <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-5 shadow-inner border border-blue-100">
+                    <i data-lucide="shield-check" class="w-8 h-8"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Secure Checkout</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-6">Transferring you to our official payment processing partner, <strong>Digistore24</strong>, to complete your transaction securely.</p>
+                
+                <!-- Digistore Sandboxed Iframe (Prevents Main DOM Hijacking) -->
+                <div class="flex justify-center items-center bg-gray-50/50 rounded-xl mb-6 relative overflow-hidden w-full h-[80px]">
+                    <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body { margin: 0; display: flex; justify-content: center; align-items: center; background: transparent; overflow: hidden; }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;script type='text/javascript' src='https://www.digistore24.com/trusted-badge/44045/KjfjLyEIMXED85P/salespage'&gt;&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;" class="w-[300px] h-[100px] border-none absolute" scrolling="no"></iframe>
+                </div>
+                
+                <div class="flex items-center justify-center gap-3 text-sm font-bold text-brand bg-brand/10 w-full px-5 py-3 rounded-xl mb-4">
+                    <div class="w-4 h-4 border-2 border-brand border-t-transparent rounded-full animate-spin"></div>
+                    Redirecting automatically...
+                </div>
+                
+                <!-- Explicit Cancellation options added based on User Feedback -->
+                <div class="flex flex-col gap-2">
+                    <a id="checkout-fallback" href="https://www.checkout-ds24.com/product/681362" class="block w-full py-2.5 bg-gray-900 text-white rounded-lg text-sm font-semibold hover:bg-gray-800 transition-colors">
+                        Proceed to Secure Checkout Immediately
+                    </a>
+                    <button onclick="cancelCheckout()" class="block w-full py-2 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-lg text-sm font-medium transition-colors">
+                        Cancel Redirect
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let checkoutTimeoutId = null;
+
+        function triggerCheckout(e, checkoutUrl) {
+            if (e) e.preventDefault();
+            const modal = document.getElementById('checkout-modal');
+            const content = document.getElementById('checkout-modal-content');
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+            
+            // Trigger animation
+            setTimeout(() => {
+                content.classList.remove('scale-95', 'opacity-0');
+                content.classList.add('scale-100', 'opacity-100');
+            }, 10);
+            
+            if (window.lucide) window.lucide.createIcons();
+            
+            // Execute redirect after 6.0 seconds to give ample cancellation time
+            checkoutTimeoutId = setTimeout(() => {
+                window.location.href = checkoutUrl;
+            }, 6000); 
+        }
+
+        function cancelCheckout() {
+            if (checkoutTimeoutId) clearTimeout(checkoutTimeoutId);
+            
+            const modal = document.getElementById('checkout-modal');
+            const content = document.getElementById('checkout-modal-content');
+            
+            content.classList.add('scale-95', 'opacity-0');
+            content.classList.remove('scale-100', 'opacity-100');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+    </script>
+</body>
+</html>

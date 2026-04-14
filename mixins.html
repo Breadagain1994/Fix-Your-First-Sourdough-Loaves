@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mix-in Master Protocol | Breadagain</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { brand: { DEFAULT: '#D69A3A', hover: '#C98A3D' } }
+                }
+            }
+        }
+    </script>
+    <style>body { font-family: 'Inter', sans-serif; background-color: #FAFBFC; }</style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+        <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-[#E5E7EB] z-[9999] transition-all duration-300">
+        <div class="max-w-[1200px] mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="enterprise.html" class="font-bold text-xl tracking-tight text-[#0A0A0A]">Sourdough Home<span class="text-brand">.</span></a>
+            <div class="hidden lg:flex items-center space-x-8 text-sm font-medium text-[#6B7280]">
+                <a href="enterprise.html" class="hover:text-brand transition-colors">The Fermentery</a>
+                <a href="library.html" class="hover:text-brand transition-colors">Library</a>
+                <a href="gear.html" class="hover:text-brand transition-colors">Hardware</a>
+                <a href="mixins.html" class="hover:text-brand transition-colors">Mix-Ins</a>
+                <a href="calculator.html" class="hover:text-brand transition-colors">Calculator</a>
+            </div>
+            <div class="flex items-center">
+                <a href="#" onclick="triggerCheckout(event, 'https://www.checkout-ds24.com/product/681362')" class="bg-brand hover:bg-[#C98A3D] text-white px-5 py-2 rounded-lg text-sm font-medium shadow-sm hover:shadow-md transition-all duration-200">Get The System</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="pt-32 pb-16 bg-white border-b border-gray-200">
+        <div class="max-w-[800px] mx-auto px-6 text-center">
+            <span class="inline-block px-3 py-1 bg-brand/10 text-brand text-xs font-bold uppercase tracking-wider rounded-full mb-6">Gamified Curriculum</span>
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight mb-6">The Mix-in Master Protocol</h1>
+            <p class="text-lg text-gray-500 leading-relaxed max-w-[600px] mx-auto">Adding inclusions disrupts the gluten network and alters hydration. Don't guess. Level up your skills systematically from simple flours to complex architectural chunks.</p>
+        </div>
+    </header>
+
+    <!-- Gamified Timeline -->
+    <main class="py-24">
+        <div class="max-w-[800px] mx-auto px-6 relative">
+            
+            <!-- Continuous Line -->
+            <div class="absolute left-[39px] md:left-1/2 top-0 bottom-0 w-[2px] bg-gray-200 md:-translate-x-1/2 z-0"></div>
+
+            <!-- LEVEL 1 -->
+            <div class="relative z-10 flex flex-col md:flex-row items-start mb-20 group">
+                <div class="md:w-1/2 md:text-right md:pr-12 md:pt-4 hidden md:block">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">The Apprentice</h3>
+                    <p class="text-gray-500 text-sm">Target: Hydration & Texture</p>
+                </div>
+                <!-- Node -->
+                <div class="flex-shrink-0 w-14 h-14 rounded-full bg-white border-4 border-gray-200 group-hover:border-brand flex items-center justify-center text-gray-400 group-hover:text-brand font-bold absolute left-[-2px] md:left-1/2 md:-translate-x-1/2 transition-colors duration-300">
+                    Lvl 1
+                </div>
+                <div class="pl-20 md:pl-12 md:w-1/2 pt-1 md:pt-4">
+                    <div class="md:hidden mb-2">
+                        <h3 class="text-2xl font-bold text-gray-900">The Apprentice</h3>
+                        <p class="text-brand text-sm font-semibold uppercase tracking-wider">Alternate Flours</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm relative">
+                        <span class="absolute -top-3 right-6 bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded uppercase tracking-wider">Low Risk</span>
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">Powders integrate homogeneously without tearing gluten. Begin by replacing 10-20% of your bread flour with alternative grains.</p>
+                        <ul class="space-y-2 text-sm text-gray-800 font-medium">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> Whole Wheat Flour</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> Rye Flour (Malty taste)</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> Semolina or Cocoa Powder</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LEVEL 2 -->
+            <div class="relative z-10 flex flex-col md:flex-row items-start mb-20 group">
+                <div class="md:w-1/2 md:pr-12 pt-1 md:pt-4 pl-20 md:pl-0 order-2 md:order-1">
+                    <div class="md:hidden mb-2">
+                        <h3 class="text-2xl font-bold text-gray-900">The Alchemist</h3>
+                        <p class="text-brand text-sm font-semibold uppercase tracking-wider">Hydration Swaps</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm relative">
+                        <span class="absolute -top-3 left-6 bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded uppercase tracking-wider">Medium Risk</span>
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">Instead of using water, substitute your hydration with flavorful liquids. Monitor fermentation speeds carefully, as sugars interact dynamically.</p>
+                        <ul class="space-y-2 text-sm text-gray-800 font-medium">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-blue-500"></i> Dark Beer or Stout</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-blue-500"></i> Buttermilk & Coffee</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-blue-500"></i> Fruit/Vegetable Juices</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Node -->
+                <div class="flex-shrink-0 w-14 h-14 rounded-full bg-white border-4 border-gray-200 group-hover:border-brand flex items-center justify-center text-gray-400 group-hover:text-brand font-bold absolute left-[-2px] md:left-1/2 md:-translate-x-1/2 transition-colors duration-300 z-10 top-0">
+                    Lvl 2
+                </div>
+                <div class="md:w-1/2 md:text-left md:pl-12 md:pt-4 hidden md:block order-1 md:order-2">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">The Alchemist</h3>
+                    <p class="text-gray-500 text-sm">Target: Flavor & Color</p>
+                </div>
+            </div>
+
+            <!-- LEVEL 3 -->
+            <div class="relative z-10 flex flex-col md:flex-row items-start mb-20 group">
+                <div class="md:w-1/2 md:text-right md:pr-12 md:pt-4 hidden md:block">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">The Artisan</h3>
+                    <p class="text-gray-500 text-sm">Target: Micro-Textures</p>
+                </div>
+                <!-- Node -->
+                <div class="flex-shrink-0 w-14 h-14 rounded-full bg-white border-4 border-gray-200 group-hover:border-brand flex items-center justify-center text-gray-400 group-hover:text-brand font-bold absolute left-[-2px] md:left-1/2 md:-translate-x-1/2 transition-colors duration-300">
+                    Lvl 3
+                </div>
+                <div class="pl-20 md:pl-12 md:w-1/2 pt-1 md:pt-4">
+                    <div class="md:hidden mb-2">
+                        <h3 class="text-2xl font-bold text-gray-900">The Artisan</h3>
+                        <p class="text-brand text-sm font-semibold uppercase tracking-wider">Seeds & Spices</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm relative">
+                        <span class="absolute -top-3 right-6 bg-yellow-100 text-yellow-700 text-xs font-bold px-2 py-1 rounded uppercase tracking-wider">Moderate Risk</span>
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">Small bits distribute evenly but will steal hydration from your dough. Rule: Always boil/soak hard seeds for 10 minutes before integration.</p>
+                        <ul class="space-y-2 text-sm text-gray-800 font-medium">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-yellow-500"></i> Sesame & Chia Sequences</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-yellow-500"></i> Cacao Nibs & Nuts</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-yellow-500"></i> Marjoram, Thyme, Zests</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LEVEL 4 -->
+            <div class="relative z-10 flex flex-col md:flex-row items-start mb-20 group">
+                <div class="md:w-1/2 md:pr-12 pt-1 md:pt-4 pl-20 md:pl-0 order-2 md:order-1">
+                    <div class="md:hidden mb-2">
+                        <h3 class="text-2xl font-bold text-gray-900">The Chromatic</h3>
+                        <p class="text-brand text-sm font-semibold uppercase tracking-wider">Visual Mastery</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm relative">
+                        <span class="absolute -top-3 left-6 bg-orange-100 text-orange-700 text-xs font-bold px-2 py-1 rounded uppercase tracking-wider">Advanced Risk</span>
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">Mastering dyes requires tight hydration control. Powders dry the dough; juices liquefy it. Balance inputs meticulously.</p>
+                        <ul class="space-y-2 text-sm text-gray-800 font-medium">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-orange-500"></i> Activated Charcoal (Black)</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-orange-500"></i> Butterfly Pea Powder (Blue)</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-orange-500"></i> Squid Ink & Beetroot</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Node -->
+                <div class="flex-shrink-0 w-14 h-14 rounded-full bg-white border-4 border-gray-200 group-hover:border-brand flex items-center justify-center text-gray-400 group-hover:text-brand font-bold absolute left-[-2px] md:left-1/2 md:-translate-x-1/2 transition-colors duration-300 z-10 top-0">
+                    Lvl 4
+                </div>
+                <div class="md:w-1/2 md:text-left md:pl-12 md:pt-4 hidden md:block order-1 md:order-2">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">The Chromatic</h3>
+                    <p class="text-gray-500 text-sm">Target: Visual Architecture</p>
+                </div>
+            </div>
+
+            <!-- LEVEL 5 -->
+            <div class="relative z-10 flex flex-col md:flex-row items-start group">
+                <div class="md:w-1/2 md:text-right md:pr-12 md:pt-4 hidden md:block">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">The Grandmaster</h3>
+                    <p class="text-gray-500 text-sm">Target: Maximum Contrast</p>
+                </div>
+                <!-- Node -->
+                <div class="flex-shrink-0 w-14 h-14 rounded-full bg-gray-900 border-4 border-gray-900 flex items-center justify-center text-brand font-bold absolute left-[-2px] md:left-1/2 md:-translate-x-1/2 shadow-[0_0_15px_rgba(214,154,58,0.5)]">
+                    <i data-lucide="crown" class="w-6 h-6"></i>
+                </div>
+                <div class="pl-20 md:pl-12 md:w-1/2 pt-1 md:pt-4">
+                    <div class="md:hidden mb-2">
+                        <h3 class="text-2xl font-bold text-gray-900">The Grandmaster</h3>
+                        <p class="text-brand text-sm font-semibold uppercase tracking-wider">Heavy Chunks</p>
+                    </div>
+                    <div class="bg-gray-900 p-6 rounded-xl border border-gray-800 shadow-xl relative">
+                        <span class="absolute -top-3 right-6 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded uppercase tracking-wider">Extreme Risk</span>
+                        <p class="text-gray-300 mb-4 text-sm leading-relaxed">Large obstacles physically sever the gluten network, killing oven spring. Must execute lamination integration. Monitor for melting cheese causing structural collapse or charring vegetables.</p>
+                        <ul class="space-y-2 text-sm text-gray-100 font-medium">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand"></i> Chocolate Chunks & Drops</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand"></i> Heavy Cheeses (Cheddar, Feta)</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand"></i> Wet Olives & Black Garlic</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Call to action inside the game -->
+    <section class="py-20 bg-white border-t border-gray-200 text-center">
+        <div class="max-w-[600px] mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-4">Track Your Progression</h2>
+            <p class="text-gray-500 mb-8">You can only beat Level 5 if you track your variables correctly. Don't waste your expensive mix-ins on bad ferments.</p>
+            <a href="#" onclick="triggerCheckout(event, 'https://www.checkout-ds24.com/product/681362')" class="inline-flex items-center justify-center bg-brand hover:bg-brand-hover text-white h-12 px-8 rounded-lg font-medium shadow-sm transition-all duration-200">
+                Unlock The Consistency System
+            </a>
+        </div>
+    </section>
+
+    <script>lucide.createIcons();</script>
+
+    <!-- About Modal -->
+    <div id="about-modal" class="fixed inset-0 z-[100] hidden items-center justify-center">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-gray-900/40 backdrop-blur-sm transition-opacity" onclick="closeAboutModal()"></div>
+        <!-- Modal Content -->
+        <div class="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg mx-4 overflow-hidden transform transition-all">
+            <button onclick="closeAboutModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-900 bg-gray-100 hover:bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center transition-colors z-10">
+                <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+            <div class="p-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">👋 Hi, I’m Tjard — and this is Breadagain.</h3>
+                <div class="h-1 w-12 bg-brand rounded mb-6"></div>
+                <div class="space-y-4 text-[15px] text-gray-600 leading-relaxed max-h-[60vh] overflow-y-auto pr-4 scrollbar-thin">
+                    <p>Three years ago, a colleague handed me a living, bubbling jar of wild yeast. It was a sourdough starter born in 2016, named Black Death (yes, really). I had no idea what I was doing — but I was instantly hooked.</p>
+                    <p>My first bake was Joe Semola's "Easy Peasy Sourdough Bread." It wasn't perfect, but it was mine. That feeling of creating something real — with my hands, from simple ingredients — changed everything for me. I call it <strong>BIY: Bake It Yourself.</strong> Sourdough became my way to slow down, create, experiment, and have fun — even when the loaves turned out weird.</p>
+                    
+                    <h4 class="font-bold text-gray-900 text-base mt-6">🍞 My Style</h4>
+                    <p>I love working with a mix of wheat, rye, and spelt, typically around 75% hydration — and yes, I still remember my first game-changer: chocolate sourdough. That was the moment it really clicked. I'm not a trained baker — just a home baker figuring things out as I go.</p>
+
+                    <h4 class="font-bold text-gray-900 text-base mt-6">📒 Why I Made This Planner</h4>
+                    <p>When I started, I really wished something like this existed. A place to track my starter, understand hydration, avoid overproofed disasters, and repeat successful bakes.</p>
+                    <p>So I created it — for beginners, for home bakers, and for anyone trying to figure it out loaf by loaf. This planner comes from experience — not perfection. Use it however you like, adapt it to your rhythm, and most importantly: enjoy the process.</p>
+                </div>
+            </div>
+            <div class="bg-gray-50 p-6 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="text-sm font-medium text-gray-900">
+                    Find Me on Instagram
+                    <span class="block text-xs text-gray-500 font-normal">Learnings, failures, templates, & funny videos</span>
+                </div>
+                <a href="https://instagram.com/breadagain__" target="_blank" class="flex items-center gap-2 bg-gradient-to-tr from-[#FFDC80] via-[#F56040] to-[#C13584] hover:opacity-90 text-white px-5 py-2.5 rounded-lg text-sm font-bold transition-opacity w-full sm:w-auto justify-center shadow-md">
+                    <i data-lucide="instagram" class="w-4 h-4 text-white fill-current"></i> @breadagain__
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function openAboutModal(e) {
+            if (e) e.preventDefault();
+            const modal = document.getElementById('about-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+            if (window.lucide) window.lucide.createIcons();
+        }
+        function closeAboutModal() {
+            const modal = document.getElementById('about-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+    </script>
+
+    
+    <!-- Checkout Interstitial Modal -->
+    <div id="checkout-modal" class="fixed inset-0 z-[10000] hidden items-center justify-center transition-all">
+        <div class="absolute inset-0 bg-gray-900/80 backdrop-blur-md" onclick="cancelCheckout()"></div>
+        <div class="relative bg-white rounded-2xl shadow-2xl w-full max-w-md mx-4 overflow-hidden transform scale-95 opacity-0 transition-all duration-300 border-2 border-brand/20" id="checkout-modal-content">
+            
+            <div class="p-8 pb-6 text-center">
+                <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-5 shadow-inner border border-blue-100">
+                    <i data-lucide="shield-check" class="w-8 h-8"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Secure Checkout</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-6">Transferring you to our official payment processing partner, <strong>Digistore24</strong>, to complete your transaction securely.</p>
+                
+                <!-- Digistore Sandboxed Iframe (Prevents Main DOM Hijacking) -->
+                <div class="flex justify-center items-center bg-gray-50/50 rounded-xl mb-6 relative overflow-hidden w-full h-[80px]">
+                    <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body { margin: 0; display: flex; justify-content: center; align-items: center; background: transparent; overflow: hidden; }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;script type='text/javascript' src='https://www.digistore24.com/trusted-badge/44045/KjfjLyEIMXED85P/salespage'&gt;&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;" class="w-[300px] h-[100px] border-none absolute" scrolling="no"></iframe>
+                </div>
+                
+                <div class="flex items-center justify-center gap-3 text-sm font-bold text-brand bg-brand/10 w-full px-5 py-3 rounded-xl mb-4">
+                    <div class="w-4 h-4 border-2 border-brand border-t-transparent rounded-full animate-spin"></div>
+                    Redirecting automatically...
+                </div>
+                
+                <!-- Explicit Cancellation options added based on User Feedback -->
+                <div class="flex flex-col gap-2">
+                    <a id="checkout-fallback" href="https://www.checkout-ds24.com/product/681362" class="block w-full py-2.5 bg-gray-900 text-white rounded-lg text-sm font-semibold hover:bg-gray-800 transition-colors">
+                        Proceed to Secure Checkout Immediately
+                    </a>
+                    <button onclick="cancelCheckout()" class="block w-full py-2 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-lg text-sm font-medium transition-colors">
+                        Cancel Redirect
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let checkoutTimeoutId = null;
+
+        function triggerCheckout(e, checkoutUrl) {
+            if (e) e.preventDefault();
+            const modal = document.getElementById('checkout-modal');
+            const content = document.getElementById('checkout-modal-content');
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+            
+            // Trigger animation
+            setTimeout(() => {
+                content.classList.remove('scale-95', 'opacity-0');
+                content.classList.add('scale-100', 'opacity-100');
+            }, 10);
+            
+            if (window.lucide) window.lucide.createIcons();
+            
+            // Execute redirect after 6.0 seconds to give ample cancellation time
+            checkoutTimeoutId = setTimeout(() => {
+                window.location.href = checkoutUrl;
+            }, 6000); 
+        }
+
+        function cancelCheckout() {
+            if (checkoutTimeoutId) clearTimeout(checkoutTimeoutId);
+            
+            const modal = document.getElementById('checkout-modal');
+            const content = document.getElementById('checkout-modal-content');
+            
+            content.classList.add('scale-95', 'opacity-0');
+            content.classList.remove('scale-100', 'opacity-100');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+    </script>
+</body>
+</html>
